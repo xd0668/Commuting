@@ -1,0 +1,136 @@
+object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = #54924#50896#44032#51077
+  ClientHeight = 892
+  ClientWidth = 1517
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 8
+    Width = 292
+    Height = 42
+    Caption = #54924#50896#44032#51077' '#54868#47732' '#51089#50629#51473
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -35
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 72
+    Top = 131
+    Width = 33
+    Height = 13
+    Caption = #50500#51060#46356
+  end
+  object Label4: TLabel
+    Left = 72
+    Top = 179
+    Width = 44
+    Height = 13
+    Caption = #48708#48128#48264#54840
+  end
+  object Label5: TLabel
+    Left = 83
+    Top = 235
+    Width = 22
+    Height = 13
+    Caption = #51060#47492
+  end
+  object Label6: TLabel
+    Left = 75
+    Top = 283
+    Width = 55
+    Height = 13
+    Caption = #54648#46300#54256#48264#54840
+  end
+  object Label7: TLabel
+    Left = 75
+    Top = 339
+    Width = 33
+    Height = 13
+    Caption = #51060#47700#51068
+  end
+  object Label8: TLabel
+    Left = 75
+    Top = 387
+    Width = 22
+    Height = 13
+    Caption = #51452#49548
+  end
+  object Label9: TLabel
+    Left = 72
+    Top = 435
+    Width = 44
+    Height = 13
+    Caption = #51452#48124#48264#54840
+  end
+  object Label12: TLabel
+    Left = 72
+    Top = 531
+    Width = 44
+    Height = 13
+    Caption = #51077#49324#51068#51088
+  end
+  object Label13: TLabel
+    Left = 72
+    Top = 571
+    Width = 44
+    Height = 13
+    Caption = #44032#51077#51068#51088
+  end
+  object Label14: TLabel
+    Left = 72
+    Top = 611
+    Width = 55
+    Height = 13
+    Caption = #44596#44553#50672#46973#52376
+  end
+  object Label15: TLabel
+    Left = 86
+    Top = 646
+    Width = 22
+    Height = 13
+    Caption = #48512#49436
+  end
+  object Label16: TLabel
+    Left = 86
+    Top = 686
+    Width = 22
+    Height = 13
+    Caption = #51649#44553
+  end
+  object Label10: TLabel
+    Left = 72
+    Top = 483
+    Width = 22
+    Height = 13
+    Caption = #49373#51068
+  end
+  object Button1: TButton
+    Left = 136
+    Top = 824
+    Width = 75
+    Height = 25
+    Caption = #52636#44540
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object DataSource1: TDataSource
+    DataSet = Form1.SimpleDataSet1
+    Left = 592
+    Top = 416
+  end
+end

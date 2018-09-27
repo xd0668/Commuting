@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.817,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.179,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.111,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.238,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.508,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.312,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\출퇴근관리\Unit1.pas=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.329,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.561,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.826,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.566,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.267,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.555,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\출퇴근관리\Unit2.pas=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.555,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\출퇴근관리\Unit2.dfm=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.345,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.312,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\출퇴근관리\Unit1.dfm=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.258,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\출퇴근관리\Project1.dproj=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.633,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

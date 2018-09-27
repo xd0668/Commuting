@@ -1,0 +1,143 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DBXInterBase,
+  Data.FMTBcd, Data.DB, Data.SqlExpr;
+
+type
+  TForm1 = class(TForm)
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Button1: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    SQLConnection1: TSQLConnection;
+    PERSONNEL: TSQLQuery;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Button2Click(Sender: TObject);
+    procedure Edit2KeyPress(Sender: TObject; var Key: Char);
+    procedure Edit1KeyPress(Sender: TObject; var Key: Char);
+    procedure FormCreate(Sender: TObject);
+
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+uses Unit2, Unit3;
+
+
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  if Edit1.Text = '' then
+  begin
+    //ShowMessage('아이디를 입력하세요.');
+    MessageBox(Handle, '아이디를 입력하세요.', '오류', MB_ICONQUESTION or MB_OK);
+    Edit1.SetFocus;
+    Exit;
+  end;
+
+  if Edit2.Text = '' then
+  begin
+    //ShowMessage('비밀번호를 입력하시오.');
+    MessageBox(Handle, '비밀번호를 입력하시오.', '오류', MB_ICONQUESTION or MB_OK);
+    Edit2.SetFocus;
+    Exit;
+  end;
+
+  with PERSONNEL do
+  begin
+    sql.Clear;
+    sql.Add('Select * from PERSONNEl');
+    sql.Add('Where ID = :id');
+    ParamByName('ID').AsString := Edit1.Text;
+    Open;
+
+    if PERSONNEL.FieldByName('ID').AsString <> Edit1.Text then
+    begin
+      //ShowMessage('아이디가 존재하지 않습니다.');
+      MessageBox(Handle, '아이디가 존재하지 않습니다.', '오류', MB_ICONERROR or MB_OK );
+      Edit1.SetFocus;
+      Exit;
+    end;
+
+    if PERSONNEL.FieldByName('PassWord').AsString <> Edit2.Text then
+    begin
+      //ShowMessage('비밀번호가 틀렸습니다.');
+      MessageBox(Handle, '비밀번호가 틀렸습니다.', '오류', MB_ICONERROR or MB_OK );
+      Edit2.SetFocus;
+      Exit;
+    end
+    else
+    begin
+      //ShowMessage('로그인되었습니다.');
+      MessageBox(Handle, '로그인되었습니다.', '로그인성공', MB_ICONASTERISK or MB_OK);
+    end;
+  end;
+  Form2.Show;
+//  Form2 := TForm2.Create(Application);
+  //if Form2.ShowModal = mrOk  then
+  begin
+   Form1.Hide;
+  end;
+
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  Form1.Hide;
+  Form3.ShowModal;
+
+end;
+
+
+procedure TForm1.Edit1KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key in ['0'..'9','a'..'z','A'..'Z',#08,#13,#25] then
+  else
+  begin
+    Key := #0;
+    //Application.MessageBox('숫자,영어만 입력 하세요.','오류',MB_OK);
+    //MessageDlg( '가나다라', mtError,mb_OK, 0 );
+    // application.Title:='오류';
+    //showmessage('숫자,영어만 입력 하세요.');
+     MessageBox(Handle,'숫자,영어만 입력 하세요','오류',MB_ICONERROR or MB_OK);
+
+    // Application.Title(123);
+    // ShowMessage('숫자,영어만 입력 하세요.');
+  end;
+
+end;
+
+procedure TForm1.Edit2KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key in ['0'..'9','a'..'z','A'..'Z',#08,#13,#25] then
+  else
+  begin
+     Key := #0;
+     MessageBox(Handle,'숫자,영어만 입력 하세요','오류',MB_ICONERROR or MB_OK);
+  end;
+end;
+
+procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+
+  Application.Terminate;
+
+end;
+
+
+end.

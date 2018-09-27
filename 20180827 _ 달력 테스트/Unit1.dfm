@@ -1,0 +1,79 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 1029
+  ClientWidth = 1222
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Calendar1: TCalendar
+    Left = 72
+    Top = 184
+    Width = 553
+    Height = 342
+    Color = clInfoText
+    StartOfWeek = 0
+    TabOrder = 0
+    UseCurrentDate = False
+    OnChange = Calendar1Change
+    OnDblClick = Calendar1DblClick
+  end
+  object RadioButton1: TRadioButton
+    Left = 304
+    Top = 72
+    Width = 113
+    Height = 17
+    Caption = 'RadioButton1'
+    TabOrder = 1
+  end
+  object RadioButton2: TRadioButton
+    Left = 512
+    Top = 72
+    Width = 113
+    Height = 17
+    Caption = 'RadioButton2'
+    TabOrder = 2
+  end
+  object ListBox1: TListBox
+    Left = 280
+    Top = 608
+    Width = 121
+    Height = 97
+    ItemHeight = 13
+    TabOrder = 3
+  end
+  object DBListBox1: TDBListBox
+    Left = 832
+    Top = 128
+    Width = 321
+    Height = 297
+    Align = alCustom
+    DataField = 'ID'
+    DataSource = Form2.DataSource1
+    ItemHeight = 13
+    TabOrder = 4
+  end
+  object GroupBox1: TGroupBox
+    Left = 744
+    Top = 504
+    Width = 185
+    Height = 105
+    Caption = 'GroupBox1'
+    TabOrder = 5
+  end
+  object MonthCalendar1: TMonthCalendar
+    Left = 720
+    Top = 100
+    Width = 449
+    Height = 645
+    Date = 43339.747108703700000000
+    TabOrder = 6
+  end
+end
