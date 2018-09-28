@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls,
+  Data.DB;
 
 type
   TForm3 = class(TForm)
@@ -19,6 +20,23 @@ type
     DBEdit8: TDBEdit;
     DBEdit9: TDBEdit;
     DBEdit10: TDBEdit;
+    DBEdit11: TDBEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    DBComboBox1: TDBComboBox;
+    DBComboBox2: TDBComboBox;
+    Label14: TLabel;
+    DataSource1: TDataSource;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);  // 회원가입 종료시 메모리 제거
     procedure CreateParams(var Params: TCreateParams); override;     //Form3 작업표시줄 아이콘 생성
   private
@@ -40,10 +58,12 @@ uses Unit1;
 // 회원가입 종료시 메모리 제거
 procedure TForm3.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
+  //Application.Terminate;
   Form1.Show;
- // Application.Terminate;
-end;
+  Form3.Refresh;
 
+
+end;
 
 
 //Form3 작업표시줄 아이콘 생성

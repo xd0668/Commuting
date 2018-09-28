@@ -181,4 +181,108 @@ object Form1: TForm1
     Left = 70
     Top = 248
   end
+  object PERSONNEL_SimpleDataSet: TSimpleDataSet
+    Active = True
+    Aggregates = <>
+    Connection = SQLConnection1
+    DataSet.CommandText = 'PERSONNEL'
+    DataSet.CommandType = ctTable
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    FieldDefs = <
+      item
+        Name = 'ClassNum'
+        DataType = ftString
+        Size = 30
+      end
+      item
+        Name = 'ID'
+        Attributes = [faRequired]
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'PassWord'
+        Attributes = [faRequired]
+        DataType = ftString
+        Size = 30
+      end
+      item
+        Name = 'Name'
+        Attributes = [faRequired]
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'PhonNum'
+        Attributes = [faRequired]
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'Email'
+        Attributes = [faRequired]
+        DataType = ftString
+        Size = 50
+      end
+      item
+        Name = 'Address'
+        Attributes = [faRequired]
+        DataType = ftString
+        Size = 200
+      end
+      item
+        Name = 'SecurityNum'
+        Attributes = [faRequired]
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'birth'
+        Attributes = [faRequired]
+        DataType = ftTimeStamp
+      end
+      item
+        Name = 'Type'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'Joindate'
+        Attributes = [faRequired]
+        DataType = ftTimeStamp
+      end
+      item
+        Name = 'Joindate2'
+        Attributes = [faRequired]
+        DataType = ftTimeStamp
+      end
+      item
+        Name = 'Emergencycontact'
+        Attributes = [faRequired]
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'Department'
+        Attributes = [faRequired]
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'Class'
+        Attributes = [faRequired]
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'ResignationDate'
+        DataType = ftDate
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 64
+    Top = 304
+  end
 end

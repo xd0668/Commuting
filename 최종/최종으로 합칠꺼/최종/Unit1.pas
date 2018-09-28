@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DBXInterBase,
-  Data.FMTBcd, Data.DB, Data.SqlExpr;
+  Data.FMTBcd, Data.DB, Data.SqlExpr, Datasnap.DBClient, SimpleDS;
 
 type
   TForm1 = class(TForm)
@@ -20,6 +20,7 @@ type
     Button3: TButton;
     Label3: TLabel;
     Label4: TLabel;
+    PERSONNEL_SimpleDataSet: TSimpleDataSet;
     procedure Button1Click(Sender: TObject);                         // 로그인 버튼
     procedure Button2Click(Sender: TObject);                         // 회원가입 버튼
     procedure FormClose(Sender: TObject; var Action: TCloseAction);  // 메인화면 종료시 메모리 제거
@@ -38,6 +39,7 @@ type
 var
   Form1: TForm1;
   s : string;
+  today : TDateTime;
 
 implementation
 
@@ -102,8 +104,12 @@ end;
 // 회원가입 버튼
 procedure TForm1.Button2Click(Sender: TObject);
 begin
-  Form1.Hide;
+   Form1.Hide;
   Form3.Show;
+  today := now;
+  PERSONNEL_SimpleDataSet.Insert;
+  Form3.DBEdit10.Text := DateTimeToStr(today);
+
 end;
 
 // ID 입력 시 ID 개수 맞는지 확인    2018-09-14

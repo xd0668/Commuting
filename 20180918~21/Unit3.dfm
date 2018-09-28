@@ -190,6 +190,7 @@ object Form3: TForm3
     DataField = 'SecurityNum'
     DataSource = DataSource1
     TabOrder = 7
+    OnKeyPress = DBEdit7KeyPress
   end
   object DBEdit8: TDBEdit
     Left = 424
@@ -199,6 +200,7 @@ object Form3: TForm3
     DataField = 'birth'
     DataSource = DataSource1
     TabOrder = 8
+    OnKeyPress = DBEdit8KeyPress
   end
   object DBEdit9: TDBEdit
     Left = 424

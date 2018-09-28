@@ -42,7 +42,9 @@ type
     DBComboBox2: TDBComboBox;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);  // 회원가입 종료시 메모리 제거
     procedure CreateParams(var Params: TCreateParams); override;
-    procedure Button1Click(Sender: TObject);     //Form3 작업표시줄 아이콘 생성
+    procedure Button1Click(Sender: TObject);
+    procedure DBEdit8KeyPress(Sender: TObject; var Key: Char);
+    procedure DBEdit7KeyPress(Sender: TObject; var Key: Char);     //Form3 작업표시줄 아이콘 생성
   private
     { Private declarations }
   public
@@ -105,6 +107,29 @@ begin
   inherited CreateParams(Params);
   Params.ExStyle := WS_EX_APPWINDOW;
   Params.WndParent := GetDesktopWindow;
+end;
+
+//주민번호에 대한 Keypress
+procedure TForm3.DBEdit7KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key in ['0'..'9',#8,#13,#25] then
+  else
+  begin
+    Key := #0;
+    MessageBox(Handle,'숫자만 입력 하세요.', '오류', MB_ICONERROR or MB_OK);
+  end;
+end;
+
+//생년월일에 대한 Keypress
+procedure TForm3.DBEdit8KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key in ['0'..'9','-',#08,#13,#25] then
+  else
+  begin
+    Key := #0;
+    MessageBox(Handle, '숫자만 입력 하세요.','오류',MB_ICONERROR or MB_OK);
+  end;
+
 end;
 
 procedure TForm3.Button1Click(Sender: TObject);
