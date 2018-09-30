@@ -41,8 +41,13 @@ type
     DBComboBox1: TDBComboBox;
     DBComboBox2: TDBComboBox;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);  // 회원가입 종료시 메모리 제거
-    procedure CreateParams(var Params: TCreateParams); override;
-    procedure Button1Click(Sender: TObject);     //Form3 작업표시줄 아이콘 생성
+    procedure CreateParams(var Params: TCreateParams); override;    //Form3 작업표시줄 아이콘 생성s
+    procedure Button1Click(Sender: TObject);
+    procedure DBEdit1KeyPress(Sender: TObject; var Key: Char);
+    procedure DBEdit2KeyPress(Sender: TObject; var Key: Char);
+    procedure DBEdit3KeyPress(Sender: TObject; var Key: Char);
+    procedure DBEdit4KeyPress(Sender: TObject; var Key: Char);
+    procedure DBEdit5KeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -94,7 +99,7 @@ end;
 procedure TForm3.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Form1.Show;
- // Application.Terminate;
+
 end;
 
 
@@ -107,6 +112,62 @@ begin
   Params.WndParent := GetDesktopWindow;
 end;
 
+// 아이디 입력시 KeyPress 처리
+procedure TForm3.DBEdit1KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key in ['0'..'9','A'..'Z','a'..'z',#8,#13,#25] then
+  else
+  begin
+    Key := #0;
+    MessageBox(Handle,'숫자와 영어만 입력하세요', '오류', MB_ICONERROR or MB_OK )
+  end;
+
+end;
+
+// 비밀번호 입력시 KeyPress 처리
+procedure TForm3.DBEdit2KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key in ['0'..'9','A'..'Z','a'..'z',#8,#13,#25] then
+  else
+  begin
+    Key := #0;
+    MessageBox(Handle,'숫자와 영어만 입력하세요.', '오류', MB_ICONERROR or MB_OK)
+  end;
+end;
+
+// 이름 입력시 KeyPress 처리
+procedure TForm3.DBEdit3KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key in ['0'..'9','A'..'Z','a'..'z',#$20 .. #$7E] then
+  begin
+    Key := #0;
+    MessageBox(Handle, '한글만 입려하세요.', '오류', MB_ICONERROR or MB_OK)
+  end;
+end;
+
+// 전화번호 입력시 KeyPress 처리
+procedure TForm3.DBEdit4KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key in ['0'..'9',#8,#13,#25] then
+  else
+  begin
+    Key := #0;
+    MessageBox(Handle,'숫자만 입력하세요.', '오류', MB_ICONERROR or MB_OK)
+  end;
+end;
+
+//  이메일 입력시 KeyPress 처리
+procedure TForm3.DBEdit5KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key in ['0'..'9','A'..'Z','a'..'z','@','.',#8,#13,#25] then
+  else
+  begin
+    Key := #0;
+    MessageBox(Handle, '숫자와 영어만 입력하세요.', '오류', MB_ICONERROR or MB_OK);
+  end;
+end;
+
+//Form3 회원가입 버튼 클릭시 오류 메시지, Keypress등
 procedure TForm3.Button1Click(Sender: TObject);
 begin
 

@@ -19,7 +19,7 @@ object Form1: TForm1
   object Label1: TLabel
     Left = 29
     Top = 120
-    Width = 54
+    Width = 63
     Height = 16
     Caption = #50500#51060#46356' : '
     Font.Charset = HANGEUL_CHARSET
@@ -32,7 +32,7 @@ object Form1: TForm1
   object Label2: TLabel
     Left = 19
     Top = 164
-    Width = 64
+    Width = 79
     Height = 16
     Caption = #48708#48128#48264#54840' : '
     Font.Charset = HANGEUL_CHARSET
