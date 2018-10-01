@@ -41,6 +41,8 @@ var
   s : string;
   today : TDateTime;
 
+
+
 implementation
 
 {$R *.dfm}
@@ -99,13 +101,18 @@ begin
   end;
   // 로그인 성공시 메인화면 출력
   Form2.Show;
+  Form2.Label2.Caption := PERSONNEL.FieldByName('Department').AsString; //  메인 화면으로 부서명 출력
+  Form2.Label3.Caption := PERSONNEL.FieldByName('Class').AsString;  //
+  Form2.Label4.Caption := PERSONNEL.FieldByName('NAME').AsString;
+
 end;
 
 // 회원가입 버튼
 procedure TForm1.Button2Click(Sender: TObject);
 begin
-   Form1.Hide;
+  Form1.Hide;
   Form3.Show;
+  Form3.Label1.Caption := '회원가입';
   today := now;
   PERSONNEL_SimpleDataSet.Insert;
   Form3.DBEdit10.Text := DateTimeToStr(today);

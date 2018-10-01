@@ -2,8 +2,8 @@ object Form3: TForm3
   Left = 0
   Top = 0
   Caption = #54924#50896#44032#51077
-  ClientHeight = 513
-  ClientWidth = 704
+  ClientHeight = 540
+  ClientWidth = 686
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,8 +16,8 @@ object Form3: TForm3
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 200
-    Top = 24
+    Left = 248
+    Top = 32
     Width = 292
     Height = 42
     Caption = #54924#50896#44032#51077' '#54868#47732' '#51089#50629#51473
@@ -94,8 +94,8 @@ object Form3: TForm3
     ParentFont = False
   end
   object Label7: TLabel
-    Left = 74
-    Top = 430
+    Left = 72
+    Top = 425
     Width = 47
     Height = 19
     Caption = #51452#49548' : '
@@ -199,9 +199,9 @@ object Form3: TForm3
   end
   object DBEdit1: TDBEdit
     Left = 152
-    Top = 137
+    Top = 132
     Width = 170
-    Height = 35
+    Height = 26
     DataField = 'ID'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
@@ -216,7 +216,7 @@ object Form3: TForm3
     Left = 152
     Top = 178
     Width = 170
-    Height = 35
+    Height = 26
     DataField = 'PassWord'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
@@ -231,7 +231,7 @@ object Form3: TForm3
     Left = 152
     Top = 231
     Width = 170
-    Height = 35
+    Height = 26
     DataField = 'Name'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
@@ -246,7 +246,7 @@ object Form3: TForm3
     Left = 152
     Top = 288
     Width = 170
-    Height = 35
+    Height = 26
     DataField = 'PhonNum'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
@@ -259,9 +259,9 @@ object Form3: TForm3
   end
   object DBEdit5: TDBEdit
     Left = 152
-    Top = 338
+    Top = 336
     Width = 170
-    Height = 35
+    Height = 26
     DataField = 'Email'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
@@ -274,9 +274,9 @@ object Form3: TForm3
   end
   object DBEdit6: TDBEdit
     Left = 152
-    Top = 428
+    Top = 418
     Width = 473
-    Height = 30
+    Height = 26
     DataField = 'Address'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
@@ -289,9 +289,9 @@ object Form3: TForm3
   end
   object DBEdit7: TDBEdit
     Left = 152
-    Top = 381
+    Top = 374
     Width = 170
-    Height = 35
+    Height = 26
     DataField = 'SecurityNum'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
@@ -306,7 +306,7 @@ object Form3: TForm3
     Left = 455
     Top = 132
     Width = 170
-    Height = 35
+    Height = 26
     DataField = 'birth'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
@@ -321,7 +321,7 @@ object Form3: TForm3
     Left = 455
     Top = 176
     Width = 170
-    Height = 35
+    Height = 26
     DataField = 'Joindate'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
@@ -336,7 +336,7 @@ object Form3: TForm3
     Left = 455
     Top = 233
     Width = 170
-    Height = 35
+    Height = 26
     DataField = 'Joindate2'
     DataSource = DataSource1
     Enabled = False
@@ -352,7 +352,9 @@ object Form3: TForm3
     Left = 454
     Top = 274
     Width = 170
-    Height = 35
+    Height = 26
+    DataField = 'Emergencycontact'
+    DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -362,15 +364,22 @@ object Form3: TForm3
     TabOrder = 10
   end
   object DBComboBox1: TDBComboBox
-    Left = 455
-    Top = 326
+    Left = 454
+    Top = 336
     Width = 170
-    Height = 26
+    Height = 22
+    Style = csOwnerDrawFixed
+    DataField = 'Department'
+    DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = []
+    Items.Strings = (
+      #44060#48156#54016
+      #51064#49324#54016
+      #50689#50629#54016)
     ParentFont = False
     TabOrder = 11
   end
@@ -378,18 +387,38 @@ object Form3: TForm3
     Left = 455
     Top = 374
     Width = 170
-    Height = 26
+    Height = 22
+    Style = csOwnerDrawFixed
+    DataField = 'Class'
+    DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = []
+    Items.Strings = (
+      #45824#54364
+      #51060#49324
+      #48512#51109
+      #52264#51109
+      #44284#51109
+      #45824#47532
+      #51452#51076
+      #49324#50896)
     ParentFont = False
     TabOrder = 12
   end
+  object Button1: TButton
+    Left = 294
+    Top = 472
+    Width = 116
+    Height = 41
+    Caption = #44032#51077#54616#44592
+    TabOrder = 13
+    OnClick = Button1Click
+  end
   object DataSource1: TDataSource
     DataSet = Form1.PERSONNEL_SimpleDataSet
-    Enabled = False
     Left = 312
     Top = 30
   end

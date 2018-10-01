@@ -135,10 +135,7 @@ object Form3: TForm3
     Height = 21
     DataField = 'ID'
     DataSource = DataSource1
-    ImeMode = imDisable
-    MaxLength = 10
     TabOrder = 1
-    OnKeyPress = DBEdit1KeyPress
   end
   object DBEdit2: TDBEdit
     Left = 152
@@ -147,10 +144,7 @@ object Form3: TForm3
     Height = 21
     DataField = 'PassWord'
     DataSource = DataSource1
-    ImeMode = imDisable
-    MaxLength = 10
     TabOrder = 2
-    OnKeyPress = DBEdit2KeyPress
   end
   object DBEdit3: TDBEdit
     Left = 152
@@ -159,10 +153,7 @@ object Form3: TForm3
     Height = 21
     DataField = 'Name'
     DataSource = DataSource1
-    ImeMode = imKata
-    MaxLength = 10
     TabOrder = 3
-    OnKeyPress = DBEdit3KeyPress
   end
   object DBEdit4: TDBEdit
     Left = 152
@@ -171,10 +162,7 @@ object Form3: TForm3
     Height = 21
     DataField = 'PhonNum'
     DataSource = DataSource1
-    ImeMode = imDisable
-    MaxLength = 11
     TabOrder = 4
-    OnKeyPress = DBEdit4KeyPress
   end
   object DBEdit5: TDBEdit
     Left = 152
@@ -183,9 +171,7 @@ object Form3: TForm3
     Height = 21
     DataField = 'Email'
     DataSource = DataSource1
-    ImeMode = imDisable
     TabOrder = 5
-    OnKeyPress = DBEdit5KeyPress
   end
   object DBEdit6: TDBEdit
     Left = 152

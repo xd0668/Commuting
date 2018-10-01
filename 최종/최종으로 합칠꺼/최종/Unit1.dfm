@@ -197,50 +197,42 @@ object Form1: TForm1
       end
       item
         Name = 'ID'
-        Attributes = [faRequired]
         DataType = ftString
         Size = 20
       end
       item
         Name = 'PassWord'
-        Attributes = [faRequired]
         DataType = ftString
         Size = 30
       end
       item
         Name = 'Name'
-        Attributes = [faRequired]
         DataType = ftString
         Size = 20
       end
       item
         Name = 'PhonNum'
-        Attributes = [faRequired]
         DataType = ftString
         Size = 20
       end
       item
         Name = 'Email'
-        Attributes = [faRequired]
         DataType = ftString
         Size = 50
       end
       item
         Name = 'Address'
-        Attributes = [faRequired]
         DataType = ftString
         Size = 200
       end
       item
         Name = 'SecurityNum'
-        Attributes = [faRequired]
         DataType = ftString
         Size = 20
       end
       item
         Name = 'birth'
-        Attributes = [faRequired]
-        DataType = ftTimeStamp
+        DataType = ftDate
       end
       item
         Name = 'Type'
@@ -249,29 +241,24 @@ object Form1: TForm1
       end
       item
         Name = 'Joindate'
-        Attributes = [faRequired]
         DataType = ftTimeStamp
       end
       item
         Name = 'Joindate2'
-        Attributes = [faRequired]
         DataType = ftTimeStamp
       end
       item
         Name = 'Emergencycontact'
-        Attributes = [faRequired]
         DataType = ftString
         Size = 20
       end
       item
         Name = 'Department'
-        Attributes = [faRequired]
         DataType = ftString
         Size = 20
       end
       item
         Name = 'Class'
-        Attributes = [faRequired]
         DataType = ftString
         Size = 20
       end
@@ -282,7 +269,7 @@ object Form1: TForm1
     IndexDefs = <>
     Params = <>
     StoreDefs = True
-    Left = 64
+    Left = 72
     Top = 304
   end
 end
