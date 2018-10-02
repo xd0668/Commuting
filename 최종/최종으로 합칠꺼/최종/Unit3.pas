@@ -38,9 +38,14 @@ type
     Label14: TLabel;
     DataSource1: TDataSource;
     Button1: TButton;
+    procedure Button1Click(Sender: TObject);                         // 회원가입 버튼
+    procedure DBEdit1KeyPress(Sender: TObject; var Key: Char);       // 아이디 입력시 KeyPress 처리
+    procedure DBEdit2KeyPress(Sender: TObject; var Key: Char);       // 비밀번호 입력시 KeyPress 처리
+    procedure DBEdit3KeyPress(Sender: TObject; var Key: Char);       // 이름 입력시 KeyPress 처리
+    procedure DBEdit4KeyPress(Sender: TObject; var Key: Char);       // 전화번호 입력시 KeyPress 처리
+    procedure DBEdit5KeyPress(Sender: TObject; var Key: Char);       // 이메일 입력시 KeyPress 처리
+    procedure CreateParams(var Params: TCreateParams); override;     // Form3 작업표시줄 아이콘 생성
     procedure FormClose(Sender: TObject; var Action: TCloseAction);  // 회원가입 종료시 메모리 제거
-    procedure CreateParams(var Params: TCreateParams); override;
-    procedure Button1Click(Sender: TObject);     //Form3 작업표시줄 아이콘 생성
   private
     { Private declarations }
   public
@@ -56,34 +61,10 @@ implementation
 
 uses Unit1, Unit2;
 
-
-// 회원가입 종료시 메모리 제거
-procedure TForm3.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-  //Application.Terminate;
-  Form1.Show;
-  Form3.Refresh;
-end;
-
-
-//Form3 작업표시줄 아이콘 생성
-procedure TForm3.CreateParams(var Params: TCreateParams);
-begin
-  inherited CreateParams(Params);
-  Params.ExStyle := WS_EX_APPWINDOW;
-  Params.WndParent := GetDesktopWindow;
-end;
-
+// 회원가입 버튼
 procedure TForm3.Button1Click(Sender: TObject);
 begin
-    {
-if  Form1.PERSONNEL_SimpleDataSet.FieldByName('ID').AsString = DBEdit1.Text then
-    begin
-      MessageBox(Handle, '중복 아이디 입니다.', '오류', MB_ICONERROR or MB_OK);
-      DBEdit1.SetFocus;
-      Exit;
-    end;     }
-                                      DBEdit2.SetFocus;
+
 //  ID 입력 확인
  if DBEdit1.Text = '' then
   begin
@@ -91,29 +72,27 @@ if  Form1.PERSONNEL_SimpleDataSet.FieldByName('ID').AsString = DBEdit1.Text then
     DBEdit1.SetFocus;
     Exit;
   end ;
-   {
-  if DBEdit1.Text <> Form1.PERSONNEL_SimpleDataSet.FieldByName('ID').AsString  then
+
+  with Form1.PERSONNEL do
   begin
-      ShowMessage('넘어간닷');
+    // InterBase PERSONNEL Table 연결 부분
+    sql.Clear;
+    sql.Add('Select * from PERSONNEl');
+    sql.Add('Where ID = :id');
+    ParamByName('ID').AsString := DBEdit1.Text;
+     open;
+    if Form1.PERSONNEL.FieldByName('ID').AsString = DBEdit1.Text then
+    begin
+      MessageBox(Handle, '아이디 중복.', '오류', MB_ICONQUESTION or MB_OK);
       DBEdit1.SetFocus;
       Exit;
-  end
-  else }
-  if Form1.PERSONNEL_SimpleDataSet.FieldByName('ID').AsString <> DBEdit1.Text then
-
+    end
+    else
     begin
-       MessageBox(Handle, '중복 아이디 입니다.', '오류', MB_ICONERROR or MB_OK);
-      ShowMessage(Form1.PERSONNEL_SimpleDataSet.FieldByName('ID').AsString);
-      DBEdit1.SetFocus;
-
-      Exit;
-    end else if Form1.PERSONNEL_SimpleDataSet.FieldByName('ID').AsString = DBEdit1.Text then
-    begin
-
-           MessageBox(Handle, '2222', '오류', MB_ICONERROR or MB_OK);
+      MessageBox(Handle, '사용 가능한 아이디입니다.', '오류', MB_ICONQUESTION or MB_OK);
+      DBEdit2.SetFocus;
     end;
-
-
+  end;
 
 //PW 입력 확인
    if DBEdit2.Text = '' then
@@ -213,6 +192,75 @@ else
   Form1.Show;
 end;
 
+// 아이디 입력시 KeyPress 처리
+procedure TForm3.DBEdit1KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key in ['0'..'9','A'..'Z','a'..'z',#8,#13,#25] then
+  else
+  begin
+    Key := #0;
+    MessageBox(Handle,'숫자와 영어만 입력하세요', '오류', MB_ICONERROR or MB_OK )
+  end;
+end;
 
+// 비밀번호 입력시 KeyPress 처리
+procedure TForm3.DBEdit2KeyPress(Sender: TObject; var Key: Char);
+begin
+  begin
+  if Key in ['0'..'9','A'..'Z','a'..'z',#8,#13,#25] then
+  else
+  begin
+    Key := #0;
+    MessageBox(Handle,'숫자와 영어만 입력하세요.', '오류', MB_ICONERROR or MB_OK)
+  end;
+end;
+end;
+
+// 이름 입력시 KeyPress 처리
+procedure TForm3.DBEdit3KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key in ['0'..'9','A'..'Z','a'..'z',#$20 .. #$7E] then
+  begin
+    Key := #0;
+    MessageBox(Handle, '한글만 입려하세요.', '오류', MB_ICONERROR or MB_OK)
+  end;
+end;
+
+// 전화번호 입력시 KeyPress 처리
+procedure TForm3.DBEdit4KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key in ['0'..'9',#8,#13,#25] then
+  else
+  begin
+    Key := #0;
+    MessageBox(Handle,'숫자만 입력하세요.', '오류', MB_ICONERROR or MB_OK)
+  end;
+end;
+
+//  이메일 입력시 KeyPress 처리
+procedure TForm3.DBEdit5KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key in ['0'..'9','A'..'Z','a'..'z','@','.',#8,#13,#25] then
+  else
+  begin
+    Key := #0;
+    MessageBox(Handle, '예시(ID@nvaer.com).', '오류', MB_ICONERROR or MB_OK);
+  end;
+end;
+
+//Form3 작업표시줄 아이콘 생성
+procedure TForm3.CreateParams(var Params: TCreateParams);
+begin
+  inherited CreateParams(Params);
+  Params.ExStyle := WS_EX_APPWINDOW;
+  Params.WndParent := GetDesktopWindow;
+end;
+
+// 회원가입 종료시 메모리 제거
+procedure TForm3.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Form1.Show;
+  Form3.Refresh;
+end;
 
 end.

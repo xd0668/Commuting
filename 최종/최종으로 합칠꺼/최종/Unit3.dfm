@@ -211,6 +211,7 @@ object Form3: TForm3
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    OnKeyPress = DBEdit1KeyPress
   end
   object DBEdit2: TDBEdit
     Left = 152
@@ -226,6 +227,7 @@ object Form3: TForm3
     Font.Style = []
     ParentFont = False
     TabOrder = 1
+    OnKeyPress = DBEdit2KeyPress
   end
   object DBEdit3: TDBEdit
     Left = 152
@@ -241,10 +243,11 @@ object Form3: TForm3
     Font.Style = []
     ParentFont = False
     TabOrder = 2
+    OnKeyPress = DBEdit3KeyPress
   end
   object DBEdit4: TDBEdit
     Left = 152
-    Top = 288
+    Top = 286
     Width = 170
     Height = 26
     DataField = 'PhonNum'
@@ -256,6 +259,7 @@ object Form3: TForm3
     Font.Style = []
     ParentFont = False
     TabOrder = 3
+    OnKeyPress = DBEdit4KeyPress
   end
   object DBEdit5: TDBEdit
     Left = 152
@@ -271,6 +275,7 @@ object Form3: TForm3
     Font.Style = []
     ParentFont = False
     TabOrder = 4
+    OnKeyPress = DBEdit5KeyPress
   end
   object DBEdit6: TDBEdit
     Left = 152

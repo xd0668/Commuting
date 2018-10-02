@@ -18,8 +18,8 @@ type
     Label7: TLabel;
     Button1: TButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);    // 메인화면 종료시 메모리 제거
-    procedure CreateParams(var Params: TCreateParams); override;
-    procedure Button1Click(Sender: TObject);       //Form2 작업표시줄 아이콘 생성
+    procedure CreateParams(var Params: TCreateParams); override;       //Form2 작업표시줄 아이콘 생성
+    procedure Button1Click(Sender: TObject);                           //  개인정보 수정 버튼
   private
     { Private declarations }
   public
@@ -35,14 +35,10 @@ implementation
 
 uses Unit3;
 
-// 메인화면 종료시 메모리 제거
-procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-  Application.Terminate;
-end;
 
 
-//Form2 작업표시줄 아이콘 생성
+
+//  개인정보 수정 버튼
 procedure TForm2.Button1Click(Sender: TObject);
 begin
   Form3.Show;
@@ -50,11 +46,18 @@ begin
   Form3.Label1.Caption := '개인정보 수정';
 end;
 
+//Form2 작업표시줄 아이콘 생성
 procedure TForm2.CreateParams(var Params: TCreateParams);
 begin
   inherited CreateParams(Params);
   Params.ExStyle := WS_EX_APPWINDOW;
   Params.WndParent := GetDesktopWindow;
+end;
+
+// 메인화면 종료시 메모리 제거
+procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Application.Terminate;
 end;
 
 end.

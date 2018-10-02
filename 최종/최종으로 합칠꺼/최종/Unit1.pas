@@ -21,15 +21,15 @@ type
     Label3: TLabel;
     Label4: TLabel;
     PERSONNEL_SimpleDataSet: TSimpleDataSet;
-    procedure Button1Click(Sender: TObject);                         // 로그인 버튼
-    procedure Button2Click(Sender: TObject);                         // 회원가입 버튼
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);  // 메인화면 종료시 메모리 제거
-    procedure Edit1KeyPress(Sender: TObject; var Key: Char);         // Edit1 에 대한 KeyPress
-    procedure Edit2KeyPress(Sender: TObject; var Key: Char);
-    procedure Edit1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure Edit2KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure Edit1Change(Sender: TObject);
-    procedure Edit2Change(Sender: TObject);         // Edit2 에 대한 KeyPress
+    procedure Button1Click(Sender: TObject);                                     // 로그인 버튼
+    procedure Button2Click(Sender: TObject);                                     // 회원가입 버튼
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);              // 메인화면 종료시 메모리 제거
+    procedure Edit1KeyPress(Sender: TObject; var Key: Char);                     // Edit1 에 대한 KeyPress
+    procedure Edit2KeyPress(Sender: TObject; var Key: Char);                     // Edit2 에 대한 KeyPress
+    procedure Edit1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);  // Edit1에 입력 후 Enter 사용시 다음으로 넘어가는것   2018-09-14
+    procedure Edit2KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);  // Edit2에 입력 후 Enter 사용시 다음으로 넘어가는것   2018-09-14
+    procedure Edit1Change(Sender: TObject);                                      // ID 입력 시 ID 개수 맞는지 확인    2018-09-14
+    procedure Edit2Change(Sender: TObject);                                      // PW 입력 시 PW 개수 맞는지 확인    2018-09-14
 
     { Private declarations }
   public
@@ -40,8 +40,6 @@ var
   Form1: TForm1;
   s : string;
   today : TDateTime;
-
-
 
 implementation
 
