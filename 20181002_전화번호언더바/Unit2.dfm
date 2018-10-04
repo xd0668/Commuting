@@ -18,6 +18,7 @@ object Form2: TForm2
     Top = 152
     Width = 121
     Height = 21
+    MaxLength = 13
     TabOrder = 0
     OnKeyPress = Edit1KeyPress
   end

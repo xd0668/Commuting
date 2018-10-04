@@ -209,6 +209,7 @@ object Form3: TForm3
     Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = []
+    ImeMode = imDisable
     ParentFont = False
     TabOrder = 0
     OnKeyPress = DBEdit1KeyPress
@@ -225,6 +226,7 @@ object Form3: TForm3
     Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = []
+    ImeMode = imDisable
     ParentFont = False
     TabOrder = 1
     OnKeyPress = DBEdit2KeyPress
@@ -257,6 +259,8 @@ object Form3: TForm3
     Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = []
+    ImeMode = imDisable
+    MaxLength = 13
     ParentFont = False
     TabOrder = 3
     OnKeyPress = DBEdit4KeyPress
@@ -273,6 +277,8 @@ object Form3: TForm3
     Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = []
+    ImeMode = imDisable
+    MaxLength = 25
     ParentFont = False
     TabOrder = 4
     OnKeyPress = DBEdit5KeyPress
@@ -304,6 +310,8 @@ object Form3: TForm3
     Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = []
+    ImeMode = imDisable
+    MaxLength = 13
     ParentFont = False
     TabOrder = 6
   end
@@ -319,8 +327,12 @@ object Form3: TForm3
     Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = []
+    ImeMode = imDisable
+    MaxLength = 10
     ParentFont = False
     TabOrder = 7
+    OnChange = DBEdit8Change
+    OnKeyPress = DBEdit8KeyPress
   end
   object DBEdit9: TDBEdit
     Left = 455
@@ -334,6 +346,8 @@ object Form3: TForm3
     Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = []
+    ImeMode = imDisable
+    MaxLength = 10
     ParentFont = False
     TabOrder = 8
   end
@@ -355,7 +369,7 @@ object Form3: TForm3
   end
   object DBEdit11: TDBEdit
     Left = 454
-    Top = 274
+    Top = 284
     Width = 170
     Height = 26
     DataField = 'Emergencycontact'
@@ -365,6 +379,7 @@ object Form3: TForm3
     Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = []
+    ImeMode = imDisable
     ParentFont = False
     TabOrder = 10
   end

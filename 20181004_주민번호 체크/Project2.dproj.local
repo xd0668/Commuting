@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2018-10-04 15:00:26.425,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2018-10-04 15:11:07.204,C:\Users\rjm98\Documents\Commuting\20181004_주민번호 체크\Unit2.dfm=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2018-10-04 15:11:07.204,C:\Users\rjm98\Documents\Commuting\20181004_주민번호 체크\Unit2.pas=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2018-10-04 15:11:08.971,C:\Users\rjm98\Documents\Commuting\20181004_주민번호 체크\Project2.dproj=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

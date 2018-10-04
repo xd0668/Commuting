@@ -1,0 +1,53 @@
+unit Unit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    Edit1: TEdit;
+    procedure Edit1Change(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+  key_back : integer; // 1:backspace가 눌러졌음.
+  vdate : string;
+  keypos : integer;
+  Result : string;
+
+implementation
+
+{$R *.dfm}
+
+
+
+procedure TForm2.Edit1Change(Sender: TObject);
+begin
+    Edit1.selstart := length(Edit1.text);
+
+
+
+if (length(Edit1.text)=5)  then
+begin
+vdate := copy(Edit1.text,1,4)+'-'+ copy(Edit1.text,4,1);
+Edit1.text := vdate;
+end;
+
+if (length(Edit1.text)=8)  then
+begin
+vdate := copy(Edit1.text,6,7)+'-'+ copy(Edit1.text,7,7);
+Edit1.text := vdate;
+end;
+end;
+
+
+end.

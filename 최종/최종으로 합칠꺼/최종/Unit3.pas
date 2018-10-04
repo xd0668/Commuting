@@ -45,7 +45,9 @@ type
     procedure DBEdit4KeyPress(Sender: TObject; var Key: Char);       // 전화번호 입력시 KeyPress 처리
     procedure DBEdit5KeyPress(Sender: TObject; var Key: Char);       // 이메일 입력시 KeyPress 처리
     procedure CreateParams(var Params: TCreateParams); override;     // Form3 작업표시줄 아이콘 생성
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);  // 회원가입 종료시 메모리 제거
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure DBEdit8Change(Sender: TObject);
+    procedure DBEdit8KeyPress(Sender: TObject; var Key: Char);  // 회원가입 종료시 메모리 제거
   private
     { Private declarations }
   public
@@ -54,12 +56,69 @@ type
 
 var
   Form3: TForm3;
+  vdate : String;
+  keypos : integer;
+  key_back : integer; // 1:backspace가 눌러졌음.
 
 implementation
 
 {$R *.dfm}
 
 uses Unit1, Unit2;
+
+function TelNoAutoMata(vTelNo : String):String;   //  전화 번호 입력시 '-' 처리 함수
+var
+tTelNo : String;
+FLocalNo, FSeoul : Boolean;
+
+begin
+tTelNo := StringReplace(vTelNo, '-', '', [rfReplaceAll, rfIgnoreCase]);
+
+if (Length(tTelNo) <= 0) then begin
+Result := '';
+exit;
+end;
+
+if (Length(tTelNo) > 11) then begin
+result := copy(vTelNo,1,12);
+exit;
+end;
+
+FLocalNo := False;
+FSeoul := False;
+
+if tTelNo[1] = '0' then
+FLocalNo := True;
+if ( FLocalNo ) and ( tTelNo[2] = '2' ) then
+FSeoul := True;
+if ( FLocalNo ) then
+if ( FSeoul ) then
+
+case Length(tTelNo) of
+3 : tTelNo := Copy(tTelNo,1,2) + '-' + Copy(tTelNo,4,1);
+6 : tTelNo := Copy(tTelNo,1,2) + '-' + Copy(tTelNo,4,3) + '-'
++ Copy(tTelNo,6,1);
+8 : tTelNo := Copy(tTelNo,1,2) + '-' + Copy(tTelNo,4,4) + '-'
++ Copy(tTelNo,7,4)
+else tTelNo := vTelNo;
+end
+else
+case Length(tTelNo) of
+4 : tTelNo := Copy(tTelNo,1,3) + '-' + Copy(tTelNo,4,1);
+7 : tTelNo := Copy(tTelNo,1,3) + '-' + Copy(tTelNo,4,3) + '-'
++ Copy(tTelNo,7,1);
+10 : tTelNo := Copy(tTelNo,1,3) + '-' + Copy(tTelNo,4,4) + '-'
++ Copy(tTelNo,8,3);
+else tTelNo := vTelNo;
+end
+else
+case Length(tTelNo) of
+4 : tTelNo := Copy(tTelNo,1,3) + '-' + Copy(tTelNo,3,1);
+9 : tTelNo := Copy(tTelNo,1,4) + '-' + Copy(tTelNo,4,4);
+else tTelNo := vTelNo;
+end;
+Result := tTelNo;
+end;
 
 // 회원가입 버튼
 procedure TForm3.Button1Click(Sender: TObject);
@@ -226,10 +285,14 @@ begin
   end;
 end;
 
-// 전화번호 입력시 KeyPress 처리
+// 전화번호 입력시 KeyPress 처리  & '-' 처리
 procedure TForm3.DBEdit4KeyPress(Sender: TObject; var Key: Char);
 begin
   if Key in ['0'..'9',#8,#13,#25] then
+  begin
+    TEdit(Sender).Text := TelNoAutoMata(DBEdit4.Text);
+    TEdit(Sender).SelStart := Length(DBEdit4.Text);
+  end
   else
   begin
     Key := #0;
@@ -247,6 +310,38 @@ begin
     MessageBox(Handle, '예시(ID@nvaer.com).', '오류', MB_ICONERROR or MB_OK);
   end;
 end;
+
+procedure TForm3.DBEdit8Change(Sender: TObject);
+begin
+    DBEdit8.selstart := length(DBEdit8.text);
+if (length(DBEdit8.text)=5) and (key_back = 0) then
+begin
+vdate := copy(DBEdit8.text,1,length(DBEdit8.text)-1)+'-';
+vdate := vdate + copy(DBEdit8.text,length(DBEdit8.text),1);
+DBEdit8.text := vdate;
+end;
+
+if (length(DBEdit8.text)=8) and (key_back = 0) then
+begin
+vdate := copy(DBEdit8.text,1,length(DBEdit8.text)-1)+'-';
+vdate := vdate + copy(DBEdit8.text,length(DBEdit8.text),1);
+DBEdit8.text := vdate;
+end;
+end;
+
+procedure TForm3.DBEdit8KeyPress(Sender: TObject; var Key: Char);
+begin
+  keypos := length(DBEdit8.text);
+
+  if Key in ['0'..'9',#8,#13,#25] then
+  else
+  begin
+    Key := #0;
+    MessageBox(Handle, '숫자만 입력하세요.', '오류', MB_ICONERROR or MB_OK);
+  end;
+
+end;
+
 
 //Form3 작업표시줄 아이콘 생성
 procedure TForm3.CreateParams(var Params: TCreateParams);
