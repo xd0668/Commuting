@@ -43,11 +43,14 @@ type
     procedure DBEdit2KeyPress(Sender: TObject; var Key: Char);       // 비밀번호 입력시 KeyPress 처리
     procedure DBEdit3KeyPress(Sender: TObject; var Key: Char);       // 이름 입력시 KeyPress 처리
     procedure DBEdit4KeyPress(Sender: TObject; var Key: Char);       // 전화번호 입력시 KeyPress 처리
-    procedure DBEdit5KeyPress(Sender: TObject; var Key: Char);       // 이메일 입력시 KeyPress 처리
+    procedure DBEdit5KeyPress(Sender: TObject; var Key: Char);       // 긴급연락처 입력시 KeyPress 처리
+    procedure DBEdit6KeyPress(Sender: TObject; var Key: Char);       // 주민번호 입력시 KeyPress 처리
+    procedure DBEdit8KeyPress(Sender: TObject; var Key: Char);       // 생일 입력시 KeyPress 처리
+    procedure DBEdit9KeyPress(Sender: TObject; var Key: Char);       // 입사일자 입력시 KeyPress 처리
+    procedure DBEdit11KeyPress(Sender: TObject; var Key: Char);      // 이메일 입력시 KeyPress 처리
     procedure CreateParams(var Params: TCreateParams); override;     // Form3 작업표시줄 아이콘 생성
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure DBEdit8Change(Sender: TObject);
-    procedure DBEdit8KeyPress(Sender: TObject; var Key: Char);  // 회원가입 종료시 메모리 제거
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);  // 회원가입 종료시 메모리 제거
+
   private
     { Private declarations }
   public
@@ -66,7 +69,82 @@ implementation
 
 uses Unit1, Unit2;
 
-function TelNoAutoMata(vTelNo : String):String;   //  전화 번호 입력시 '-' 처리 함수
+//  생년월일 , 입사일시 입력시 '-' 처리 함수
+function A(vTelNo : String):String;
+var
+tTelNo : String;
+FLocalNo, FSeoul : Boolean;
+
+begin
+tTelNo := StringReplace(vTelNo, '-', '', [rfReplaceAll, rfIgnoreCase]);
+
+if (Length(tTelNo) <= 0) then begin
+Result := '';
+exit;
+end;
+
+if (Length(tTelNo) > 9) then begin
+result := copy(vTelNo,1,10);
+exit;
+end;
+
+FLocalNo := False;
+FSeoul := False;
+
+if tTelNo[1] = '0' then
+FLocalNo := True;
+if ( FLocalNo ) and ( tTelNo[2] = '2' ) then
+FSeoul := True;
+if ( FLocalNo ) then
+if ( FSeoul ) then
+
+case Length(tTelNo) of
+3 : tTelNo := Copy(tTelNo,1,2) + '-' + Copy(tTelNo,4,1);
+4 : tTelNo := Copy(tTelNo,1,4) + '-' + Copy(tTelNo,5,2);
+
+else tTelNo := vTelNo;
+end  ;
+
+case Length(tTelNo) of
+
+7 : tTelNo := Copy(tTelNo,1,4) + '-' + Copy(tTelNo,5,2)+ '-' +Copy(tTelNo,7,2);
+else tTelNo := vTelNo;
+end;
+Result := tTelNo;
+end;
+
+//  주민번호 Check 함수
+function JuminCheck(data: String): Boolean;
+var Arrays: Array[1..13] of integer;
+    i, Sum, Temp: integer;
+const
+    Key: Array[1..13] of integer = (2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5, 1);
+begin
+if Length(data) = 13 then
+begin
+  Sum:= 0;
+  for i:=1 to 13 do
+  begin
+    Arrays[i]:= StrToInt(Copy(data, i, 1)) * Key[i];
+    Sum:= Sum + Arrays[i];
+  end;
+  Sum:= Sum - Arrays[13];
+  Temp:= 11 - (Sum Mod 11);
+  if Temp = Arrays[13] then
+  begin
+    Result:= True;
+  end else begin
+    Temp:= Temp Mod 10;
+    if Temp = Arrays[13] then
+    begin
+      Result:= True;
+    end;
+  end;
+end;
+end;
+
+//  전화 번호 입력시 '-' 처리 함수
+function TelNoAutoMata(vTelNo : String):String;
 var
 tTelNo : String;
 FLocalNo, FSeoul : Boolean;
@@ -139,18 +217,13 @@ begin
     sql.Add('Select * from PERSONNEl');
     sql.Add('Where ID = :id');
     ParamByName('ID').AsString := DBEdit1.Text;
-     open;
+    open;
     if Form1.PERSONNEL.FieldByName('ID').AsString = DBEdit1.Text then
     begin
       MessageBox(Handle, '아이디 중복.', '오류', MB_ICONQUESTION or MB_OK);
       DBEdit1.SetFocus;
       Exit;
     end
-    else
-    begin
-      MessageBox(Handle, '사용 가능한 아이디입니다.', '오류', MB_ICONQUESTION or MB_OK);
-      DBEdit2.SetFocus;
-    end;
   end;
 
 //PW 입력 확인
@@ -185,21 +258,21 @@ begin
     Exit;
   end;
 
-//주소를 입력하세요
+//주민번호를 입력 확인
   if DBEdit6.Text = '' then
   begin
-    MessageBox(Handle, '주소 입력하세요.', '오류', MB_ICONQUESTION or MB_OK);
-    DBEdit6.SetFocus;
-    Exit;
-  end;
-
-//주민번호를 입력 확인
-  if DBEdit7.Text = '' then
-  begin
     MessageBox(Handle, '주민번호 입력하세요.', '오류', MB_ICONQUESTION or MB_OK);
-    DBEdit7.SetFocus;
+    DBEdit6.SetFocus;
     exit;
     end;
+
+//주소를 입력하세요
+  if DBEdit7.Text = '' then
+  begin
+    MessageBox(Handle, '주소 입력하세요.', '오류', MB_ICONQUESTION or MB_OK);
+    DBEdit7.SetFocus;
+    Exit;
+  end;
 
 //생일 입력 확인
   if DBEdit8.Text = '' then
@@ -239,19 +312,25 @@ begin
     exit;
     end;
 
-{
-if JuminCheck(DBEdit8.Text) = True then
-  MessageBoxW(0, '올바른 주민등록 번호입니다.', '', $40)
-else
-  MessageBoxW(0, '올바르지 않은 주민등록 번호입니다.', '', $10);    }
+
+  if JuminCheck(DBEdit6.Text) = False then
+    begin
+      MessageBoxW(0, '올바르지 않은 주민등록 번호입니다.', '', $10);
+      DBEdit6.SetFocus;
+      exit;
+    end;
+
 
   Form1.PERSONNEL_SimpleDataSet.Post;
   Form1.PERSONNEL_SimpleDataSet.ApplyUpdates(-1);
   Form3.Hide;
+  MessageBox(Handle,'가입이 완료되었습니다.','가입성공',MB_ICONHAND or MB_OK
+  );
   Form1.Show;
 end;
 
 // 아이디 입력시 KeyPress 처리
+
 procedure TForm3.DBEdit1KeyPress(Sender: TObject; var Key: Char);
 begin
   if Key in ['0'..'9','A'..'Z','a'..'z',#8,#13,#25] then
@@ -281,7 +360,7 @@ begin
   if Key in ['0'..'9','A'..'Z','a'..'z',#$20 .. #$7E] then
   begin
     Key := #0;
-    MessageBox(Handle, '한글만 입려하세요.', '오류', MB_ICONERROR or MB_OK)
+    MessageBox(Handle, '한글만 입려하세요.', '오류', MB_ICONERROR or MB_OK);
   end;
 end;
 
@@ -296,50 +375,76 @@ begin
   else
   begin
     Key := #0;
-    MessageBox(Handle,'숫자만 입력하세요.', '오류', MB_ICONERROR or MB_OK)
+    MessageBox(Handle,'숫자만 입력하세요.', '오류', MB_ICONERROR or MB_OK);
   end;
 end;
 
-//  이메일 입력시 KeyPress 처리
+// 긴급연락처 입력시 KeyPress 처리  & '-' 처리
 procedure TForm3.DBEdit5KeyPress(Sender: TObject; var Key: Char);
 begin
-  if Key in ['0'..'9','A'..'Z','a'..'z','@','.',#8,#13,#25] then
+  if Key in ['0'..'9',#8,#13,#25] then
+  begin
+    TEdit(Sender).Text := TelNoAutoMata(DBEdit5.Text);
+    TEdit(Sender).SelStart := Length(DBEdit5.Text);
+  end
   else
   begin
     Key := #0;
-    MessageBox(Handle, '예시(ID@nvaer.com).', '오류', MB_ICONERROR or MB_OK);
+    MessageBox(Handle,'숫자만 입력하세요.', '오류', MB_ICONERROR or MB_OK);
   end;
 end;
 
-procedure TForm3.DBEdit8Change(Sender: TObject);
+//  주민번호 입력시 KeyPress 처리
+procedure TForm3.DBEdit6KeyPress(Sender: TObject; var Key: Char);
 begin
-    DBEdit8.selstart := length(DBEdit8.text);
-if (length(DBEdit8.text)=5) and (key_back = 0) then
-begin
-vdate := copy(DBEdit8.text,1,length(DBEdit8.text)-1)+'-';
-vdate := vdate + copy(DBEdit8.text,length(DBEdit8.text),1);
-DBEdit8.text := vdate;
+  if Key in ['0'..'9',#8,#13,#25] then
+  else
+  begin
+    Key := #0;
+    MessageBox(Handle,'숫자만 입력하세요.', '오류', MB_ICONERROR or MB_OK);
+  end;
+
 end;
 
-if (length(DBEdit8.text)=8) and (key_back = 0) then
-begin
-vdate := copy(DBEdit8.text,1,length(DBEdit8.text)-1)+'-';
-vdate := vdate + copy(DBEdit8.text,length(DBEdit8.text),1);
-DBEdit8.text := vdate;
-end;
-end;
-
+//  생일 입력시 KeyPress 처리
 procedure TForm3.DBEdit8KeyPress(Sender: TObject; var Key: Char);
 begin
-  keypos := length(DBEdit8.text);
-
-  if Key in ['0'..'9',#8,#13,#25] then
+ if Key in ['0'..'9','-',#8,#13,#25] then
+ begin
+   TEdit(Sender).Text := A(DBEdit8.Text);
+   TEdit(Sender).SelStart := Length(DBEdit8.Text);
+ end
   else
   begin
     Key := #0;
     MessageBox(Handle, '숫자만 입력하세요.', '오류', MB_ICONERROR or MB_OK);
   end;
+end;
 
+//  입사일자 입력시 KeyPress 처리
+procedure TForm3.DBEdit9KeyPress(Sender: TObject; var Key: Char);
+begin
+ if Key in ['0'..'9','-',#8,#13,#25] then
+ begin
+   TEdit(Sender).Text := A(DBEdit9.Text);
+   TEdit(Sender).SelStart := Length(DBEdit9.Text);
+ end
+  else
+  begin
+    Key := #0;
+    MessageBox(Handle, '숫자만 입력하세요.', '오류', MB_ICONERROR or MB_OK);
+  end;
+end;
+
+//  이메일 입력시 KeyPress 처리
+procedure TForm3.DBEdit11KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key in ['0'..'9','A'..'Z','a'..'z','@',#8,#13,#25] then
+  else
+  begin
+    Key := #0;
+    MessageBox(Handle, '예시(ID@nvaer.com).', '오류', MB_ICONERROR or MB_OK);
+  end;
 end;
 
 

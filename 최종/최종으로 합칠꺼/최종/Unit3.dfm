@@ -81,8 +81,8 @@ object Form3: TForm3
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 66
-    Top = 338
+    Left = 362
+    Top = 286
     Width = 68
     Height = 19
     Caption = #51060#47700#51068' : '
@@ -95,7 +95,7 @@ object Form3: TForm3
   end
   object Label7: TLabel
     Left = 72
-    Top = 425
+    Top = 433
     Width = 47
     Height = 19
     Caption = #51452#49548' : '
@@ -147,7 +147,7 @@ object Form3: TForm3
   end
   object Label11: TLabel
     Left = 345
-    Top = 242
+    Top = 235
     Width = 85
     Height = 19
     Caption = #44032#51077#51068#51088' : '
@@ -159,8 +159,8 @@ object Form3: TForm3
     ParentFont = False
   end
   object Label12: TLabel
-    Left = 340
-    Top = 286
+    Left = 40
+    Top = 338
     Width = 96
     Height = 19
     Caption = #44596#44553#50672#46973#52376' : '
@@ -270,7 +270,7 @@ object Form3: TForm3
     Top = 336
     Width = 170
     Height = 26
-    DataField = 'Email'
+    DataField = 'Emergencycontact'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -278,32 +278,34 @@ object Form3: TForm3
     Font.Name = 'Tahoma'
     Font.Style = []
     ImeMode = imDisable
-    MaxLength = 25
+    MaxLength = 13
     ParentFont = False
     TabOrder = 4
     OnKeyPress = DBEdit5KeyPress
   end
   object DBEdit6: TDBEdit
     Left = 152
-    Top = 418
-    Width = 473
+    Top = 374
+    Width = 170
     Height = 26
-    DataField = 'Address'
+    DataField = 'SecurityNum'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = []
+    MaxLength = 13
     ParentFont = False
     TabOrder = 5
+    OnKeyPress = DBEdit6KeyPress
   end
   object DBEdit7: TDBEdit
     Left = 152
-    Top = 374
-    Width = 170
+    Top = 423
+    Width = 472
     Height = 26
-    DataField = 'SecurityNum'
+    DataField = 'Address'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -331,7 +333,6 @@ object Form3: TForm3
     MaxLength = 10
     ParentFont = False
     TabOrder = 7
-    OnChange = DBEdit8Change
     OnKeyPress = DBEdit8KeyPress
   end
   object DBEdit9: TDBEdit
@@ -350,6 +351,7 @@ object Form3: TForm3
     MaxLength = 10
     ParentFont = False
     TabOrder = 8
+    OnKeyPress = DBEdit9KeyPress
   end
   object DBEdit10: TDBEdit
     Left = 455
@@ -372,7 +374,7 @@ object Form3: TForm3
     Top = 284
     Width = 170
     Height = 26
-    DataField = 'Emergencycontact'
+    DataField = 'Email'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -382,6 +384,7 @@ object Form3: TForm3
     ImeMode = imDisable
     ParentFont = False
     TabOrder = 10
+    OnKeyPress = DBEdit11KeyPress
   end
   object DBComboBox1: TDBComboBox
     Left = 454
