@@ -33,7 +33,7 @@ implementation
 
 {$R *.dfm}
 
-uses Unit3;
+uses Unit3, Unit1, Unit4;
 
 
 
@@ -41,9 +41,16 @@ uses Unit3;
 //  개인정보 수정 버튼
 procedure TForm2.Button1Click(Sender: TObject);
 begin
-  Form3.Show;
-  Form2.Hide;
-  Form3.Label1.Caption := '개인정보 수정';
+{    with Form1.PERSONNEL do
+  begin
+    // InterBase PERSONNEL Table 연결 부분
+    sql.Clear;
+    sql.Add('Select * from PERSONNEl');
+    sql.Add('Where ID = :id');
+    ParamByName('ID').AsString := Form1.Edit1.Text;
+    Open;
+  end;     }
+  form4.show;
 end;
 
 //Form2 작업표시줄 아이콘 생성

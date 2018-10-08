@@ -50,6 +50,26 @@ type
     procedure DBEdit11KeyPress(Sender: TObject; var Key: Char);      // 이메일 입력시 KeyPress 처리
     procedure CreateParams(var Params: TCreateParams); override;     // Form3 작업표시줄 아이콘 생성
     procedure FormClose(Sender: TObject; var Action: TCloseAction);  // 회원가입 종료시 메모리 제거
+    procedure DBEdit1KeyDown(Sender: TObject; var Key: Word;         //  아이디 입력후 Enter 사용시 다음으로 넘어가는것
+    Shift: TShiftState);
+    procedure DBEdit2KeyDown(Sender: TObject; var Key: Word;         // 비밀번호 입력후 Enter 사용시 다음으로 넘어갈것
+      Shift: TShiftState);
+    procedure DBEdit3KeyDown(Sender: TObject; var Key: Word;         // 이름 입력후 Enter 사용시 다음으로 넘어갈것
+      Shift: TShiftState);
+    procedure DBEdit4KeyDown(Sender: TObject; var Key: Word;         // 전화번호 입력후 Enter 사용시 다음으로 넘어갈것
+      Shift: TShiftState);
+    procedure DBEdit5KeyDown(Sender: TObject; var Key: Word;         // 긴급연락처 입력후 Enter 사용시 다음으로 넘어갈것
+      Shift: TShiftState);
+    procedure DBEdit6KeyDown(Sender: TObject; var Key: Word;         //  주민번호 입력후 Enter 사용시 다음으로 넘어갈것
+      Shift: TShiftState);
+    procedure DBEdit7KeyDown(Sender: TObject; var Key: Word;         //  주소 입력후 Enter 사용시 다음으로 넘어갈것
+      Shift: TShiftState);
+    procedure DBEdit8KeyDown(Sender: TObject; var Key: Word;         //  생일 입력후  Enter 사용시 다음으로 넘어갈것
+      Shift: TShiftState);
+    procedure DBEdit9KeyDown(Sender: TObject; var Key: Word;         //  입사일자 입력후 Enter 사용시 다음으로 넘어갈것
+      Shift: TShiftState);
+    procedure DBEdit11KeyDown(Sender: TObject; var Key: Word;        //  이메일 입력후 Enter 사용시 다음으로 넘어갈것
+      Shift: TShiftState);
 
   private
     { Private declarations }
@@ -250,10 +270,10 @@ begin
     Exit;
   end;
 
- //이메일 입력 확인
+//긴급연락처 입력 확인
    if DBEdit5.Text = '' then
   begin
-    MessageBox(Handle, '이메일 입력하세요.', '오류', MB_ICONQUESTION or MB_OK);
+    MessageBox(Handle, '긴급연락처 입력하세요.', '오류', MB_ICONQUESTION or MB_OK);
     DBEdit5.SetFocus;
     Exit;
   end;
@@ -290,10 +310,10 @@ begin
     exit;
     end;
 
-//긴급연락처 입력 확인
+//이메일 입력 확인
   if DBEdit11.Text = '' then
   begin
-    MessageBox(Handle, '긴급연락처 입력하세요.', '오류', MB_ICONQUESTION or MB_OK);
+    MessageBox(Handle, '이메일 입력하세요.', '오류', MB_ICONQUESTION or MB_OK);
     DBEdit11.SetFocus;
     exit;
     end;
@@ -329,8 +349,17 @@ begin
   Form1.Show;
 end;
 
-// 아이디 입력시 KeyPress 처리
+//  아이디 입력후 Enter 사용시 다음으로 넘어가는것
+procedure TForm3.DBEdit1KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = 13 then
+  begin
+    SelectNext(ActiveControl as TWinControl, True,True);
+  end;
+end;
 
+// 아이디 입력시 KeyPress 처리
 procedure TForm3.DBEdit1KeyPress(Sender: TObject; var Key: Char);
 begin
   if Key in ['0'..'9','A'..'Z','a'..'z',#8,#13,#25] then
@@ -338,6 +367,16 @@ begin
   begin
     Key := #0;
     MessageBox(Handle,'숫자와 영어만 입력하세요', '오류', MB_ICONERROR or MB_OK )
+  end;
+end;
+
+// 비밀번호 입력후 Enter 사용시 다음으로 넘어갈것
+procedure TForm3.DBEdit2KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = 13 then
+  begin
+    SelectNext(ActiveControl as TWinControl, True, True);
   end;
 end;
 
@@ -354,6 +393,16 @@ begin
 end;
 end;
 
+// 이름 입력후 Enter 사용시 다음으로 넘어갈것
+procedure TForm3.DBEdit3KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = 13 then
+  begin
+    SelectNext(ActiveControl as TWinControl, True, True);
+  end;
+end;
+
 // 이름 입력시 KeyPress 처리
 procedure TForm3.DBEdit3KeyPress(Sender: TObject; var Key: Char);
 begin
@@ -361,6 +410,16 @@ begin
   begin
     Key := #0;
     MessageBox(Handle, '한글만 입려하세요.', '오류', MB_ICONERROR or MB_OK);
+  end;
+end;
+
+// 전화번호 입력후 Enter 사용시 다음으로 넘어갈것
+procedure TForm3.DBEdit4KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = 13 then
+  begin
+    SelectNext(ActiveControl as TWinControl, True, True);
   end;
 end;
 
@@ -379,6 +438,16 @@ begin
   end;
 end;
 
+// 긴급연락처 입력후 Enter 사용시 다음으로 넘어갈것
+procedure TForm3.DBEdit5KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = 13 then
+  begin
+    SelectNext(ActiveControl as TWinControl, True, True);
+  end;
+end;
+
 // 긴급연락처 입력시 KeyPress 처리  & '-' 처리
 procedure TForm3.DBEdit5KeyPress(Sender: TObject; var Key: Char);
 begin
@@ -394,6 +463,16 @@ begin
   end;
 end;
 
+//  주민번호 입력후 Enter 사용시 다음으로 넘어갈것
+procedure TForm3.DBEdit6KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = 13 then
+  begin
+    SelectNext(ActiveControl as TWinControl, True, True);
+  end;
+end;
+
 //  주민번호 입력시 KeyPress 처리
 procedure TForm3.DBEdit6KeyPress(Sender: TObject; var Key: Char);
 begin
@@ -404,6 +483,26 @@ begin
     MessageBox(Handle,'숫자만 입력하세요.', '오류', MB_ICONERROR or MB_OK);
   end;
 
+end;
+
+//  주소 입력후 Enter 사용시 다음으로 넘어갈것
+procedure TForm3.DBEdit7KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = 13 then
+  begin
+    SelectNext(ActiveControl as TWinControl, True, True);
+  end;
+end;
+
+//  생일 입력후  Enter 사용시 다음으로 넘어갈것
+procedure TForm3.DBEdit8KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = 13 then
+  begin
+    SelectNext(ActiveControl as TWinControl, True, True);
+  end;
 end;
 
 //  생일 입력시 KeyPress 처리
@@ -418,6 +517,16 @@ begin
   begin
     Key := #0;
     MessageBox(Handle, '숫자만 입력하세요.', '오류', MB_ICONERROR or MB_OK);
+  end;
+end;
+
+//  입사일자 입력후 Enter 사용시 다음으로 넘어갈것
+procedure TForm3.DBEdit9KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = 13 then
+  begin
+    SelectNext(ActiveControl as TWinControl, True, True);
   end;
 end;
 
@@ -436,6 +545,16 @@ begin
   end;
 end;
 
+//  이메일 입력후 Enter 사용시 다음으로 넘어갈것
+procedure TForm3.DBEdit11KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = 13 then
+  begin
+    SelectNext(ActiveControl as TWinControl, True, True);
+  end;
+end;
+
 //  이메일 입력시 KeyPress 처리
 procedure TForm3.DBEdit11KeyPress(Sender: TObject; var Key: Char);
 begin
@@ -446,7 +565,6 @@ begin
     MessageBox(Handle, '예시(ID@nvaer.com).', '오류', MB_ICONERROR or MB_OK);
   end;
 end;
-
 
 //Form3 작업표시줄 아이콘 생성
 procedure TForm3.CreateParams(var Params: TCreateParams);

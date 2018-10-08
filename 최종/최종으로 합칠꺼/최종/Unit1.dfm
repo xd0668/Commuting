@@ -83,7 +83,7 @@ object Form1: TForm1
   end
   object Edit2: TEdit
     Left = 100
-    Top = 158
+    Top = 150
     Width = 175
     Height = 30
     BorderStyle = bsNone
@@ -176,7 +176,13 @@ object Form1: TForm1
   end
   object PERSONNEL: TSQLQuery
     MaxBlobSize = -1
-    Params = <>
+    Params = <
+      item
+        DataType = ftUnknown
+        ParamType = ptInput
+      end>
+    SQL.Strings = (
+      'select * from PERSONNEL')
     SQLConnection = SQLConnection1
     Left = 70
     Top = 248

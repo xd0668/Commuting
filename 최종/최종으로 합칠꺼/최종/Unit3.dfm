@@ -212,6 +212,7 @@ object Form3: TForm3
     ImeMode = imDisable
     ParentFont = False
     TabOrder = 0
+    OnKeyDown = DBEdit1KeyDown
     OnKeyPress = DBEdit1KeyPress
   end
   object DBEdit2: TDBEdit
@@ -229,11 +230,12 @@ object Form3: TForm3
     ImeMode = imDisable
     ParentFont = False
     TabOrder = 1
+    OnKeyDown = DBEdit2KeyDown
     OnKeyPress = DBEdit2KeyPress
   end
   object DBEdit3: TDBEdit
     Left = 152
-    Top = 231
+    Top = 233
     Width = 170
     Height = 26
     DataField = 'Name'
@@ -245,6 +247,7 @@ object Form3: TForm3
     Font.Style = []
     ParentFont = False
     TabOrder = 2
+    OnKeyDown = DBEdit3KeyDown
     OnKeyPress = DBEdit3KeyPress
   end
   object DBEdit4: TDBEdit
@@ -263,6 +266,7 @@ object Form3: TForm3
     MaxLength = 13
     ParentFont = False
     TabOrder = 3
+    OnKeyDown = DBEdit4KeyDown
     OnKeyPress = DBEdit4KeyPress
   end
   object DBEdit5: TDBEdit
@@ -281,6 +285,7 @@ object Form3: TForm3
     MaxLength = 13
     ParentFont = False
     TabOrder = 4
+    OnKeyDown = DBEdit5KeyDown
     OnKeyPress = DBEdit5KeyPress
   end
   object DBEdit6: TDBEdit
@@ -298,6 +303,7 @@ object Form3: TForm3
     MaxLength = 13
     ParentFont = False
     TabOrder = 5
+    OnKeyDown = DBEdit6KeyDown
     OnKeyPress = DBEdit6KeyPress
   end
   object DBEdit7: TDBEdit
@@ -316,6 +322,7 @@ object Form3: TForm3
     MaxLength = 13
     ParentFont = False
     TabOrder = 6
+    OnKeyDown = DBEdit7KeyDown
   end
   object DBEdit8: TDBEdit
     Left = 455
@@ -333,6 +340,7 @@ object Form3: TForm3
     MaxLength = 10
     ParentFont = False
     TabOrder = 7
+    OnKeyDown = DBEdit8KeyDown
     OnKeyPress = DBEdit8KeyPress
   end
   object DBEdit9: TDBEdit
@@ -351,6 +359,7 @@ object Form3: TForm3
     MaxLength = 10
     ParentFont = False
     TabOrder = 8
+    OnKeyDown = DBEdit9KeyDown
     OnKeyPress = DBEdit9KeyPress
   end
   object DBEdit10: TDBEdit
@@ -384,6 +393,7 @@ object Form3: TForm3
     ImeMode = imDisable
     ParentFont = False
     TabOrder = 10
+    OnKeyDown = DBEdit11KeyDown
     OnKeyPress = DBEdit11KeyPress
   end
   object DBComboBox1: TDBComboBox
@@ -441,8 +451,8 @@ object Form3: TForm3
     OnClick = Button1Click
   end
   object DataSource1: TDataSource
-    DataSet = Form1.PERSONNEL_SimpleDataSet
-    Left = 312
-    Top = 30
+    DataSet = Form1.PERSONNEL
+    Left = 24
+    Top = 14
   end
 end
