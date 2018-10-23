@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.063,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.164,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.529,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\공부\최종 작업 서버 클라이언트\서버\PERSONNEL_Server.dproj=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.532,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\공부\최종 작업 서버 클라이언트\서버\Unit1.dfm=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.122,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\공부\최종 작업 서버 클라이언트\서버\ServerMethodsUnit1.pas=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.333,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.532,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\공부\최종 작업 서버 클라이언트\서버\Unit1.pas=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.122,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\공부\최종 작업 서버 클라이언트\서버\ServerMethodsUnit1.dfm=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.761,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\공부\최종 작업 서버 클라이언트\서버\ServerContainerUnit1.dfm=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.761,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\공부\최종 작업 서버 클라이언트\서버\ServerContainerUnit1.pas=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

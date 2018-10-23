@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.188,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ClientModuleUnit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.437,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\공부\최종 작업 서버 클라이언트\클라이언트\Unit4.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.907,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\공부\최종 작업 서버 클라이언트\클라이언트\Unit1.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.140,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ClientModuleUnit1.pas=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\공부\최종 작업 서버 클라이언트\클라이언트\ClientModuleUnit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.861,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\공부\최종 작업 서버 클라이언트\클라이언트\Unit3.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.745,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\공부\최종 작업 서버 클라이언트\클라이언트\UclientClass.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.390,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.048,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\공부\최종 작업 서버 클라이언트\클라이언트\PERSONNEL_Client.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.035,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ClientClassesUnit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.244,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ClientClassesUnit1.pas=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\공부\최종 작업 서버 클라이언트\클라이언트\ClientClassesUnit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.140,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ClientModuleUnit1.dfm=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\공부\최종 작업 서버 클라이언트\클라이언트\ClientModuleUnit1.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.907,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\공부\최종 작업 서버 클라이언트\클라이언트\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.969,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.543,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\공부\최종 작업 서버 클라이언트\클라이언트\Unit2.pas</Transaction>
+  </Transactions>
+</BorlandProject>

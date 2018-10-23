@@ -1,0 +1,59 @@
+object ClientModule1: TClientModule1
+  OldCreateOrder = False
+  Height = 271
+  Width = 415
+  object SQLConnection1: TSQLConnection
+    DriverName = 'DataSnap'
+    LoginPrompt = False
+    Params.Strings = (
+      'DriverUnit=Data.DBXDataSnap'
+      'HostName=localhost'
+      
+        'DriverAssemblyLoader=Borland.Data.TDBXClientDriverLoader,Borland' +
+        '.Data.DbxClientDriver,Version=24.0.0.0,Culture=neutral,PublicKey' +
+        'Token=91d62ebb5b0d1b1b'
+      'Port=211'
+      'CommunicationProtocol=tcp/ip'
+      'DatasnapContext=datasnap/'
+      'Filters={}')
+    Connected = True
+    Left = 8
+    Top = 120
+    UniqueId = '{AF7B3C2D-0635-498F-A1D4-105B5946543A}'
+  end
+  object DSProviderConnection1: TDSProviderConnection
+    ServerClassName = 'TServerMethods1'
+    Connected = True
+    SQLConnection = SQLConnection1
+    Left = 152
+    Top = 40
+  end
+  object PERSONNEL: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'PERSONNELProvider'
+    ReadOnly = True
+    RemoteServer = DSProviderConnection1
+    Left = 96
+    Top = 120
+  end
+  object SQLQuery1: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'select * from PERSONNEL')
+    SQLConnection = SQLConnection1
+    Left = 72
+    Top = 192
+  end
+  object DataSetProvider1: TDataSetProvider
+    DataSet = SQLQuery1
+    Left = 160
+    Top = 192
+  end
+  object DataSource1: TDataSource
+    DataSet = PERSONNEL
+    Left = 168
+    Top = 120
+  end
+end

@@ -1,0 +1,56 @@
+unit Unit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids,
+  Vcl.DBGrids;
+
+type
+  TForm2 = class(TForm)
+    Label1: TLabel;
+    Button1: TButton;
+    DBGrid1: TDBGrid;
+    procedure Button1Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+uses Unit4, ClientModuleUnit1, Unit1, Unit3;
+
+procedure TForm2.Button1Click(Sender: TObject);
+begin
+     {
+  with form1.PERSONNEL1 do
+  begin
+    // InterBase PERSONNEL Table 연결 부분
+
+    sql.Clear;
+    sql.Add('Select * from PERSONNEl');
+    sql.Add('Where ID = :id');
+    ParamByName('ID').AsString := Form1.Edit1.Text;
+    Open;
+  end;
+  ShowMessage(form1.PERSONNEL1.FieldByName('ID').AsString);
+  Form4.DBEdit1.Text := form1.PERSONNEL1.FieldByName('ID').AsString;
+  form4.Edit1.Text := form1.PERSONNEL1.FieldByName('ID').AsString;     }
+  form4.Show;
+end;
+
+procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+Application.Terminate;
+end;
+
+end.

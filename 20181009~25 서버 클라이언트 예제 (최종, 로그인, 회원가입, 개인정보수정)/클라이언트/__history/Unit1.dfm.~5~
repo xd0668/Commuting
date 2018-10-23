@@ -1,0 +1,259 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 336
+  ClientWidth = 824
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 64
+    Top = 64
+    Width = 54
+    Height = 16
+    Caption = #50500#51060#46356' : '
+    Font.Charset = HANGEUL_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = #55092#47676#47588#51649#52404
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 54
+    Top = 145
+    Width = 64
+    Height = 16
+    Caption = #48708#48128#48264#54840' : '
+    Font.Charset = HANGEUL_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = #55092#47676#47588#51649#52404
+    Font.Style = []
+    ParentFont = False
+  end
+  object DBGrid1: TDBGrid
+    Left = 360
+    Top = 8
+    Width = 412
+    Height = 233
+    DataSource = ClientModule1.DataSource1
+    Options = [dgEditing, dgAlwaysShowEditor, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'CLASSNUM'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ID'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'PASSWORD'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NAME'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'PHONNUM'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'EMAIL'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ADDRESS'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'SECURITYNUM'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'BIRTH'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'TYPE'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'JOINDATE'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'JOINDATE2'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'EMERGENCYCONTACT'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'DEPARTMENT'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CLASS'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'RESIGNATIONDATE'
+        Width = 100
+        Visible = True
+      end>
+  end
+  object Edit1: TEdit
+    Left = 124
+    Top = 58
+    Width = 175
+    Height = 30
+    BorderStyle = bsNone
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Yu Gothic UI'
+    Font.Style = []
+    ImeMode = imDisable
+    MaxLength = 10
+    ParentFont = False
+    TabOrder = 1
+  end
+  object Edit2: TEdit
+    Left = 124
+    Top = 131
+    Width = 175
+    Height = 30
+    BorderStyle = bsNone
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Yu Gothic UI'
+    Font.Style = []
+    ImeMode = imDisable
+    MaxLength = 10
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Button1: TButton
+    Left = 124
+    Top = 188
+    Width = 175
+    Height = 40
+    Caption = #47196#44536#51064
+    TabOrder = 3
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 124
+    Top = 258
+    Width = 75
+    Height = 25
+    Caption = #54924#50896#44032#51077
+    TabOrder = 4
+    OnClick = Button2Click
+  end
+  object PERSONNEL1: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = SQLConnection2
+    Left = 70
+    Top = 199
+  end
+  object SQLConnection2: TSQLConnection
+    ConnectionName = 'Work'
+    DriverName = 'Interbase'
+    LoginPrompt = False
+    Params.Strings = (
+      'DriverName=Interbase'
+      'DriverUnit=Data.DBXInterBase'
+      
+        'DriverPackageLoader=TDBXDynalinkDriverLoader,DbxCommonDriver200.' +
+        'bpl'
+      
+        'DriverAssemblyLoader=Borland.Data.TDBXDynalinkDriverLoader,Borla' +
+        'nd.Data.DbxCommonDriver,Version=20.0.0.0,Culture=neutral,PublicK' +
+        'eyToken=91d62ebb5b0d1b1b'
+      
+        'MetaDataPackageLoader=TDBXInterbaseMetaDataCommandFactory,DbxInt' +
+        'erBaseDriver200.bpl'
+      
+        'MetaDataAssemblyLoader=Borland.Data.TDBXInterbaseMetaDataCommand' +
+        'Factory,Borland.Data.DbxInterBaseDriver,Version=20.0.0.0,Culture' +
+        '=neutral,PublicKeyToken=91d62ebb5b0d1b1b'
+      'LibraryName=dbxint.dll'
+      'LibraryNameOsx=libsqlib.dylib'
+      'VendorLib=GDS32.DLL'
+      'VendorLibWin64=ibclient64.dll'
+      'VendorLibOsx=libgds.dylib'
+      'Database=C:\Databases\Work.IB'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'Role=RoleName'
+      'MaxBlobSize=-1'
+      'LocaleCode=0000'
+      'IsolationLevel=ReadCommitted'
+      'SQLDialect=3'
+      'CommitRetain=False'
+      'WaitOnLocks=True'
+      'TrimChar=False'
+      'DisplayDriverName=InterBase Server'
+      'BlobSize=-1'
+      'ErrorResourceFile='
+      'RoleName=RoleName'
+      'ServerCharSet='
+      'Trim Char=False'
+      'SEP=')
+    Connected = True
+    Left = 160
+    Top = 200
+  end
+end
