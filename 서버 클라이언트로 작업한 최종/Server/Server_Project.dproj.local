@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.238,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas=C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Server\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.436,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.334,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.837,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Server\Server.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.837,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Server\Server.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.699,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas=C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Server\ServerContainerUnit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.963,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.699,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.dfm=C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Server\ServerContainerUnit1.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.238,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.dfm=C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Server\ServerMethodsUnit1.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.440,C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Server\Server_Project.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

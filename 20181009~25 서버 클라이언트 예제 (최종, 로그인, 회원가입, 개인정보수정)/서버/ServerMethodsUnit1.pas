@@ -11,7 +11,7 @@ type
   TServerMethods1 = class(TDSServerModule)
     SQLConnection1: TSQLConnection;
     PERSONNELProvider: TDataSetProvider;
-    SQLTable1: TSQLTable;
+    PERSONNEL_Table: TSQLTable;
   private
     { Private declarations }
   public

@@ -1,7 +1,7 @@
 object ServerMethods1: TServerMethods1
   OldCreateOrder = False
-  Height = 520
-  Width = 716
+  Height = 120
+  Width = 311
   object SQLConnection1: TSQLConnection
     ConnectionName = 'Work'
     DriverName = 'Interbase'
@@ -47,19 +47,19 @@ object ServerMethods1: TServerMethods1
       'Trim Char=False'
       'SEP=')
     Connected = True
-    Left = 56
-    Top = 56
-  end
-  object PERSONNELProvider: TDataSetProvider
-    DataSet = SQLTable1
-    Left = 240
+    Left = 32
     Top = 40
   end
-  object SQLTable1: TSQLTable
+  object PERSONNELProvider: TDataSetProvider
+    DataSet = PERSONNEL_Table
+    Left = 232
+    Top = 40
+  end
+  object PERSONNEL_Table: TSQLTable
     MaxBlobSize = -1
     SQLConnection = SQLConnection1
     TableName = 'PERSONNEL'
-    Left = 144
-    Top = 48
+    Left = 128
+    Top = 40
   end
 end
