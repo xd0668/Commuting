@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
-  TForm1 = class(TForm)
+  TLoginForm = class(TForm)
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -34,7 +34,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  LoginForm: TLoginForm;
   today : TDateTime;
   s : string;
 
@@ -45,7 +45,7 @@ implementation
 uses ClientModuleUnit1, MainForm, SingUpForm;
 
 // 로그인 버튼
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TLoginForm.Button1Click(Sender: TObject);
 begin
 
   // 아이디 입력 확인
@@ -93,7 +93,7 @@ begin
     // 로그인 성공
     begin
       MessageBox(Handle, '로그인 되었습니다.', '로그인 성공', MB_ICONASTERISK or MB_OK);
-      Form1.Hide;
+      LoginForm.Hide;
     end;
 
   end;
@@ -106,9 +106,9 @@ begin
 end;
 
 // 회원가입 버튼
-procedure TForm1.Button2Click(Sender: TObject);
+procedure TLoginForm.Button2Click(Sender: TObject);
 begin
-  Form1.Hide;
+  LoginForm.Hide;
   Singup.Show;
   Singup.Label1.Caption := '회원가입';
   today := now;
@@ -117,7 +117,7 @@ begin
 end;
 
 // ID 입력 시 ID 개수 맞는지 확인    2018-09-14
-procedure TForm1.Edit1Change(Sender: TObject);
+procedure TLoginForm.Edit1Change(Sender: TObject);
 begin
   s := Edit1.Text;
   Edit1.Color := RGB(255, 170, 170);
@@ -128,7 +128,7 @@ begin
 end;
 
 // Edit1에 입력 후 Enter 사용시 다음으로 넘어가는것   2018-09-14
-procedure TForm1.Edit1KeyDown(Sender: TObject; var Key: Word;
+procedure TLoginForm.Edit1KeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
     if Key = 13 then
@@ -138,7 +138,7 @@ begin
 end;
 
 // Edit1 에 대한 KeyPress
-procedure TForm1.Edit1KeyPress(Sender: TObject; var Key: Char);
+procedure TLoginForm.Edit1KeyPress(Sender: TObject; var Key: Char);
 begin
   if Key in ['0'..'9','a'..'z','A'..'Z',#08,#13,#25] then
   else
@@ -149,7 +149,7 @@ begin
 end;
 
 // PW 입력 시 PW 개수 맞는지 확인    2018-09-14
-procedure TForm1.Edit2Change(Sender: TObject);
+procedure TLoginForm.Edit2Change(Sender: TObject);
 begin
    s := Edit2.Text;
   Edit2.Color := RGB(255, 170, 170);
@@ -160,7 +160,7 @@ begin
 end;
 
 // Edit2에 입력 후 Enter 사용시 다음으로 넘어가는것   2018-09-14
-procedure TForm1.Edit2KeyDown(Sender: TObject; var Key: Word;
+procedure TLoginForm.Edit2KeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   if Key = 13 then
@@ -170,7 +170,7 @@ begin
 end;
 
 // Edit2 에 대한 KeyPress
-procedure TForm1.Edit2KeyPress(Sender: TObject; var Key: Char);
+procedure TLoginForm.Edit2KeyPress(Sender: TObject; var Key: Char);
 begin
   if Key in ['0'..'9','a'..'z','A'..'Z',#08,#13,#25] then
   else
@@ -181,7 +181,7 @@ begin
 end;
 
 // 로그인 화면 종료시 메모리 제거
-procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
+procedure TLoginForm.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Application.Terminate;
 end;

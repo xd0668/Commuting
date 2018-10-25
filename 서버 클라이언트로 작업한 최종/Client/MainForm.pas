@@ -16,6 +16,7 @@ type
     Label6: TLabel;
     Label7: TLabel;
     Button1: TButton;
+    Button2: TButton;
     procedure CreateParams(var Params: TCreateParams); override;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button1Click(Sender: TObject);
@@ -32,31 +33,29 @@ implementation
 
 {$R *.dfm}
 
-uses InformationUpdate;
+uses InformationUpdate, Login, ClientModuleUnit1;
 
 
-
+// 개인정보 수정 버튼
 procedure TMain.Button1Click(Sender: TObject);
 var
    a : String;
 begin
-a :=  Lo.Edit1.Text;
-
-
+a :=  LoginForm.Edit1.Text;
    with ClientModule1  do
     begin
-
-      SQLQuery1.close;
-      SQLQuery1.SQL.Clear;
-      SQLQuery1.SQL.Add('select * from PERSONNEL where ID = ''' + a + '''');
-      SQLQuery1.Open;
+      PERSONNEL_SQLQuery.close;
+      PERSONNEL_SQLQuery.SQL.Clear;
+      PERSONNEL_SQLQuery.SQL.Add('select * from PERSONNEL where ID = ''' + a + '''');
+      PERSONNEL_SQLQuery.Open;
       ClientDataSet1.Close;
       ClientDataSet1.Active := True;
     end;
   InforUpdate.Show;
+  Main.Hide;
 end;
 
-//Form2 작업표시줄 아이콘 생성
+// 작업표시줄 아이콘 생성
 procedure TMain.CreateParams(var Params: TCreateParams);
 begin
   inherited CreateParams(Params);

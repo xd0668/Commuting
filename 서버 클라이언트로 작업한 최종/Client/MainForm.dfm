@@ -2,8 +2,8 @@ object Main: TMain
   Left = 0
   Top = 0
   Caption = #52636#53748#44540#44288#47532' '#54532#47196#44536#47016
-  ClientHeight = 411
-  ClientWidth = 852
+  ClientHeight = 771
+  ClientWidth = 1386
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,6 +11,7 @@ object Main: TMain
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
   OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
@@ -28,54 +29,98 @@ object Main: TMain
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 208
-    Top = 112
-    Width = 22
-    Height = 13
+    Left = 578
+    Top = 43
+    Width = 32
+    Height = 25
     Caption = #48512#49436
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
   object Label3: TLabel
-    Left = 313
-    Top = 112
-    Width = 22
-    Height = 13
+    Left = 691
+    Top = 43
+    Width = 32
+    Height = 25
     Caption = #51649#44553
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
   object Label4: TLabel
-    Left = 433
-    Top = 112
-    Width = 22
-    Height = 13
+    Left = 819
+    Top = 43
+    Width = 32
+    Height = 25
     Caption = #51060#47492
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
   object Label5: TLabel
-    Left = 152
-    Top = 112
-    Width = 35
-    Height = 13
+    Left = 512
+    Top = 43
+    Width = 60
+    Height = 25
     Caption = #48512' '#49436' : '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
   object Label6: TLabel
-    Left = 265
-    Top = 112
-    Width = 35
-    Height = 13
+    Left = 625
+    Top = 43
+    Width = 60
+    Height = 25
     Caption = #51649' '#44553' : '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
   object Label7: TLabel
-    Left = 393
-    Top = 112
-    Width = 35
-    Height = 13
+    Left = 753
+    Top = 43
+    Width = 60
+    Height = 25
     Caption = #51060' '#47492' : '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
   object Button1: TButton
-    Left = 536
+    Left = 1152
     Top = 32
     Width = 75
     Height = 25
     Caption = #44060#51064#51221#48372#49688#51221
     TabOrder = 0
     OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 1264
+    Top = 32
+    Width = 75
+    Height = 25
+    Caption = #54924#50896#53448#53748
+    TabOrder = 1
   end
 end

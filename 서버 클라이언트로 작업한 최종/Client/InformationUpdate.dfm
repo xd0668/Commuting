@@ -11,6 +11,8 @@ object InforUpdate: TInforUpdate
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -196,11 +198,12 @@ object InforUpdate: TInforUpdate
     ParentFont = False
   end
   object DBEdit1: TDBEdit
-    Left = 146
+    Left = 153
     Top = 132
     Width = 170
     Height = 26
     DataField = 'ID'
+    DataSource = ClientModule1.DataSource2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -216,6 +219,7 @@ object InforUpdate: TInforUpdate
     Width = 170
     Height = 26
     DataField = 'PassWord'
+    DataSource = ClientModule1.DataSource2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -231,6 +235,7 @@ object InforUpdate: TInforUpdate
     Width = 170
     Height = 26
     DataField = 'Name'
+    DataSource = ClientModule1.DataSource2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -245,6 +250,7 @@ object InforUpdate: TInforUpdate
     Width = 170
     Height = 26
     DataField = 'PhonNum'
+    DataSource = ClientModule1.DataSource2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -261,6 +267,7 @@ object InforUpdate: TInforUpdate
     Width = 170
     Height = 26
     DataField = 'Emergencycontact'
+    DataSource = ClientModule1.DataSource2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -277,6 +284,7 @@ object InforUpdate: TInforUpdate
     Width = 170
     Height = 26
     DataField = 'SecurityNum'
+    DataSource = ClientModule1.DataSource2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -292,6 +300,7 @@ object InforUpdate: TInforUpdate
     Width = 472
     Height = 26
     DataField = 'Address'
+    DataSource = ClientModule1.DataSource2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -308,6 +317,7 @@ object InforUpdate: TInforUpdate
     Width = 170
     Height = 26
     DataField = 'birth'
+    DataSource = ClientModule1.DataSource2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -324,6 +334,7 @@ object InforUpdate: TInforUpdate
     Width = 170
     Height = 26
     DataField = 'Joindate'
+    DataSource = ClientModule1.DataSource2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -340,6 +351,7 @@ object InforUpdate: TInforUpdate
     Width = 170
     Height = 26
     DataField = 'Joindate2'
+    DataSource = ClientModule1.DataSource2
     Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -355,6 +367,7 @@ object InforUpdate: TInforUpdate
     Width = 170
     Height = 26
     DataField = 'Email'
+    DataSource = ClientModule1.DataSource2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -371,6 +384,7 @@ object InforUpdate: TInforUpdate
     Height = 22
     Style = csOwnerDrawFixed
     DataField = 'Department'
+    DataSource = ClientModule1.DataSource2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -390,6 +404,7 @@ object InforUpdate: TInforUpdate
     Height = 22
     Style = csOwnerDrawFixed
     DataField = 'Class'
+    DataSource = ClientModule1.DataSource2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -412,15 +427,8 @@ object InforUpdate: TInforUpdate
     Top = 466
     Width = 116
     Height = 41
-    Caption = #44032#51077#54616#44592
+    Caption = #49688#51221#54616#44592
     TabOrder = 13
-  end
-  object Button2: TButton
-    Left = 656
-    Top = 51
-    Width = 75
-    Height = 25
-    Caption = #54924#50896#53448#53748
-    TabOrder = 14
+    OnClick = Button1Click
   end
 end

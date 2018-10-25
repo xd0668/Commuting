@@ -11,6 +11,8 @@ object SingUp: TSingUp
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poOwnerFormCenter
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -201,7 +203,7 @@ object SingUp: TSingUp
     Width = 170
     Height = 26
     DataField = 'ID'
-    DataSource = ClientModule1.DataSource2
+    DataSource = ClientModule1.DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -210,6 +212,8 @@ object SingUp: TSingUp
     ImeMode = imDisable
     ParentFont = False
     TabOrder = 0
+    OnKeyDown = DBEdit1KeyDown
+    OnKeyPress = DBEdit1KeyPress
   end
   object DBEdit2: TDBEdit
     Left = 152
@@ -217,7 +221,7 @@ object SingUp: TSingUp
     Width = 170
     Height = 26
     DataField = 'PassWord'
-    DataSource = ClientModule1.DataSource2
+    DataSource = ClientModule1.DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -226,6 +230,8 @@ object SingUp: TSingUp
     ImeMode = imDisable
     ParentFont = False
     TabOrder = 1
+    OnKeyDown = DBEdit2KeyDown
+    OnKeyPress = DBEdit2KeyPress
   end
   object DBEdit3: TDBEdit
     Left = 152
@@ -233,7 +239,7 @@ object SingUp: TSingUp
     Width = 170
     Height = 26
     DataField = 'Name'
-    DataSource = ClientModule1.DataSource2
+    DataSource = ClientModule1.DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -241,6 +247,8 @@ object SingUp: TSingUp
     Font.Style = []
     ParentFont = False
     TabOrder = 2
+    OnKeyDown = DBEdit3KeyDown
+    OnKeyPress = DBEdit3KeyPress
   end
   object DBEdit4: TDBEdit
     Left = 152
@@ -248,7 +256,7 @@ object SingUp: TSingUp
     Width = 170
     Height = 26
     DataField = 'PhonNum'
-    DataSource = ClientModule1.DataSource2
+    DataSource = ClientModule1.DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -258,6 +266,8 @@ object SingUp: TSingUp
     MaxLength = 13
     ParentFont = False
     TabOrder = 3
+    OnKeyDown = DBEdit4KeyDown
+    OnKeyPress = DBEdit4KeyPress
   end
   object DBEdit5: TDBEdit
     Left = 152
@@ -265,7 +275,7 @@ object SingUp: TSingUp
     Width = 170
     Height = 26
     DataField = 'Emergencycontact'
-    DataSource = ClientModule1.DataSource2
+    DataSource = ClientModule1.DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -275,6 +285,8 @@ object SingUp: TSingUp
     MaxLength = 13
     ParentFont = False
     TabOrder = 4
+    OnKeyDown = DBEdit5KeyDown
+    OnKeyPress = DBEdit5KeyPress
   end
   object DBEdit6: TDBEdit
     Left = 152
@@ -282,7 +294,7 @@ object SingUp: TSingUp
     Width = 170
     Height = 26
     DataField = 'SecurityNum'
-    DataSource = ClientModule1.DataSource2
+    DataSource = ClientModule1.DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -291,6 +303,8 @@ object SingUp: TSingUp
     MaxLength = 13
     ParentFont = False
     TabOrder = 5
+    OnKeyDown = DBEdit6KeyDown
+    OnKeyPress = DBEdit6KeyPress
   end
   object DBEdit7: TDBEdit
     Left = 152
@@ -298,7 +312,7 @@ object SingUp: TSingUp
     Width = 472
     Height = 26
     DataField = 'Address'
-    DataSource = ClientModule1.DataSource2
+    DataSource = ClientModule1.DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -308,6 +322,7 @@ object SingUp: TSingUp
     MaxLength = 13
     ParentFont = False
     TabOrder = 6
+    OnKeyDown = DBEdit7KeyDown
   end
   object DBEdit8: TDBEdit
     Left = 455
@@ -315,7 +330,7 @@ object SingUp: TSingUp
     Width = 170
     Height = 26
     DataField = 'birth'
-    DataSource = ClientModule1.DataSource2
+    DataSource = ClientModule1.DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -325,6 +340,8 @@ object SingUp: TSingUp
     MaxLength = 10
     ParentFont = False
     TabOrder = 7
+    OnKeyDown = DBEdit8KeyDown
+    OnKeyPress = DBEdit8KeyPress
   end
   object DBEdit9: TDBEdit
     Left = 455
@@ -332,7 +349,7 @@ object SingUp: TSingUp
     Width = 170
     Height = 26
     DataField = 'Joindate'
-    DataSource = ClientModule1.DataSource2
+    DataSource = ClientModule1.DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -342,6 +359,8 @@ object SingUp: TSingUp
     MaxLength = 10
     ParentFont = False
     TabOrder = 8
+    OnKeyDown = DBEdit9KeyDown
+    OnKeyPress = DBEdit9KeyPress
   end
   object DBEdit10: TDBEdit
     Left = 455
@@ -349,7 +368,7 @@ object SingUp: TSingUp
     Width = 170
     Height = 26
     DataField = 'Joindate2'
-    DataSource = ClientModule1.DataSource2
+    DataSource = ClientModule1.DataSource1
     Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -365,7 +384,7 @@ object SingUp: TSingUp
     Width = 170
     Height = 26
     DataField = 'Email'
-    DataSource = ClientModule1.DataSource2
+    DataSource = ClientModule1.DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -374,6 +393,8 @@ object SingUp: TSingUp
     ImeMode = imDisable
     ParentFont = False
     TabOrder = 10
+    OnKeyDown = DBEdit11KeyDown
+    OnKeyPress = DBEdit11KeyPress
   end
   object DBComboBox1: TDBComboBox
     Left = 454
@@ -382,7 +403,7 @@ object SingUp: TSingUp
     Height = 22
     Style = csOwnerDrawFixed
     DataField = 'Department'
-    DataSource = ClientModule1.DataSource2
+    DataSource = ClientModule1.DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -402,7 +423,7 @@ object SingUp: TSingUp
     Height = 22
     Style = csOwnerDrawFixed
     DataField = 'Class'
-    DataSource = ClientModule1.DataSource2
+    DataSource = ClientModule1.DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -427,5 +448,6 @@ object SingUp: TSingUp
     Height = 41
     Caption = #44032#51077#54616#44592
     TabOrder = 13
+    OnClick = Button1Click
   end
 end

@@ -2,7 +2,7 @@ program Client_Project;
 
 uses
   Vcl.Forms,
-  Login in 'Login.pas' {Form1},
+  Login in 'Login.pas' {LoginForm},
   ClientClassesUnit1 in 'ClientClassesUnit1.pas',
   ClientModuleUnit1 in 'ClientModuleUnit1.pas' {ClientModule1: TDataModule},
   MainForm in 'MainForm.pas' {Main},
@@ -16,8 +16,8 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  TStyleManager.TrySetStyle('TabletDark');
-  Application.CreateForm(TForm1, Form1);
+  TStyleManager.TrySetStyle('Turquoise Gray');
+  Application.CreateForm(TLoginForm, LoginForm);
   Application.CreateForm(TClientModule1, ClientModule1);
   Application.CreateForm(TMain, Main);
   Application.CreateForm(TSingUp, SingUp);
