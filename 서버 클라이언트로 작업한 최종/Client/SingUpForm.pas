@@ -322,14 +322,14 @@ begin
 //부서 입력 확인
   if DBComboBox1.Text = '' then
   begin
-    MessageBox(Handle, '부서 입력하세요.', '오류', MB_ICONQUESTION or MB_OK);
+    MessageBox(Handle, '부서 선택하세요.', '오류', MB_ICONQUESTION or MB_OK);
     exit;
     end;
 
 //직급 입력 확인
   if DBComboBox2.Text = '' then
   begin
-    MessageBox(Handle, '직급 입력하세요.', '오류', MB_ICONQUESTION or MB_OK);
+    MessageBox(Handle, '직급 선택하세요.', '오류', MB_ICONQUESTION or MB_OK);
     exit;
     end;
 
@@ -566,8 +566,8 @@ begin
 end;
 
 
-  // 작업표시줄 아이콘 생성
-  procedure TSingUp.CreateParams(var Params: TCreateParams);
+// 작업표시줄 아이콘 생성
+procedure TSingUp.CreateParams(var Params: TCreateParams);
   begin
     inherited CreateParams(Params);
     Params.ExStyle := WS_EX_APPWINDOW;

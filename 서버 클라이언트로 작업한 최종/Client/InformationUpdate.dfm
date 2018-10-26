@@ -55,8 +55,8 @@ object InforUpdate: TInforUpdate
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 86
-    Top = 231
+    Left = 87
+    Top = 235
     Width = 49
     Height = 19
     Caption = #51060#47492' : '
@@ -107,8 +107,8 @@ object InforUpdate: TInforUpdate
     ParentFont = False
   end
   object Label8: TLabel
-    Left = 58
-    Top = 400
+    Left = 59
+    Top = 376
     Width = 77
     Height = 19
     Caption = #51452#48124#48264#54840' : '
@@ -204,6 +204,7 @@ object InforUpdate: TInforUpdate
     Height = 26
     DataField = 'ID'
     DataSource = ClientModule1.DataSource2
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -228,9 +229,11 @@ object InforUpdate: TInforUpdate
     ImeMode = imDisable
     ParentFont = False
     TabOrder = 1
+    OnKeyDown = DBEdit2KeyDown
+    OnKeyPress = DBEdit2KeyPress
   end
   object DBEdit3: TDBEdit
-    Left = 152
+    Left = 153
     Top = 233
     Width = 170
     Height = 26
@@ -243,6 +246,8 @@ object InforUpdate: TInforUpdate
     Font.Style = []
     ParentFont = False
     TabOrder = 2
+    OnKeyDown = DBEdit3KeyDown
+    OnKeyPress = DBEdit3KeyPress
   end
   object DBEdit4: TDBEdit
     Left = 152
@@ -260,6 +265,8 @@ object InforUpdate: TInforUpdate
     MaxLength = 13
     ParentFont = False
     TabOrder = 3
+    OnKeyDown = DBEdit4KeyDown
+    OnKeyPress = DBEdit4KeyPress
   end
   object DBEdit5: TDBEdit
     Left = 152
@@ -277,6 +284,8 @@ object InforUpdate: TInforUpdate
     MaxLength = 13
     ParentFont = False
     TabOrder = 4
+    OnKeyDown = DBEdit5KeyDown
+    OnKeyPress = DBEdit5KeyPress
   end
   object DBEdit6: TDBEdit
     Left = 152
@@ -285,6 +294,7 @@ object InforUpdate: TInforUpdate
     Height = 26
     DataField = 'SecurityNum'
     DataSource = ClientModule1.DataSource2
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -310,6 +320,7 @@ object InforUpdate: TInforUpdate
     MaxLength = 13
     ParentFont = False
     TabOrder = 6
+    OnKeyDown = DBEdit7KeyDown
   end
   object DBEdit8: TDBEdit
     Left = 455
@@ -327,6 +338,8 @@ object InforUpdate: TInforUpdate
     MaxLength = 10
     ParentFont = False
     TabOrder = 7
+    OnKeyDown = DBEdit8KeyDown
+    OnKeyPress = DBEdit8KeyPress
   end
   object DBEdit9: TDBEdit
     Left = 455
@@ -344,6 +357,8 @@ object InforUpdate: TInforUpdate
     MaxLength = 10
     ParentFont = False
     TabOrder = 8
+    OnKeyDown = DBEdit9KeyDown
+    OnKeyPress = DBEdit9KeyPress
   end
   object DBEdit10: TDBEdit
     Left = 455
@@ -376,6 +391,8 @@ object InforUpdate: TInforUpdate
     ImeMode = imDisable
     ParentFont = False
     TabOrder = 10
+    OnKeyDown = DBEdit11KeyDown
+    OnKeyPress = DBEdit11KeyPress
   end
   object DBComboBox1: TDBComboBox
     Left = 454

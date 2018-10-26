@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Grids,
+  Vcl.Samples.Calendar, Vcl.WinXCalendars, Vcl.ComCtrls;
 
 type
   TMain = class(TForm)
@@ -20,6 +21,7 @@ type
     procedure CreateParams(var Params: TCreateParams); override;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button1Click(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -56,6 +58,9 @@ a :=  LoginForm.Edit1.Text;
 end;
 
 // 작업표시줄 아이콘 생성
+
+
+
 procedure TMain.CreateParams(var Params: TCreateParams);
 begin
   inherited CreateParams(Params);

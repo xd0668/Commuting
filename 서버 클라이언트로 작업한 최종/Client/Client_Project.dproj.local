@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899-12-30 00:00:00.000.777,C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\ClientClassesUnit1.pas=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ClientClassesUnit1.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.273,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.876,C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\Client_Project.dproj=C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\Client_Project.dproj</Transaction>
     <Transaction>1899-12-30 00:00:00.000.452,C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\ClientModuleUnit1.dfm=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ClientModuleUnit1.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.669,C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\Client_Project.dproj=C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\Client_Project.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.876,C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\Client_Project.dproj=C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\Client_Project.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.777,C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\ClientClassesUnit1.pas=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ClientClassesUnit1.pas</Transaction>
     <Transaction>1899-12-30 00:00:00.000.921,=C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\Unit2.pas</Transaction>
     <Transaction>1899-12-30 00:00:00.000.857,C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\Unit3.pas=C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\SingUpForm.pas</Transaction>
     <Transaction>1899-12-30 00:00:00.000.024,=C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\Unit3.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.317,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>1899-12-30 00:00:00.000.441,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.104,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ClientModuleUnit1.pas</Transaction>
     <Transaction>1899-12-30 00:00:00.000.163,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.104,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ClientModuleUnit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.317,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>1899-12-30 00:00:00.000.997,C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\Client_Project.dproj=C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\Client_Project.dproj</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.669,C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\Client_Project.dproj=C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\Client_Project.dproj</Transaction>
     <Transaction>1899-12-30 00:00:00.000.216,C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\Client_Project.dproj=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.273,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
     <Transaction>1899-12-30 00:00:00.000.155,C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\Unit2.dfm=C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\SingUpForm.dfm</Transaction>
     <Transaction>1899-12-30 00:00:00.000.452,C:\Users\rjm98\Documents\Commuting\서버 클라이언트로 작업한 최종\Client\ClientModuleUnit1.pas=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ClientModuleUnit1.pas</Transaction>
     <Transaction>1899-12-30 00:00:00.000.885,=C:\Users\rjm98\Documents\Embarcadero\Studio\Projects\ClientClassesUnit1.pas</Transaction>

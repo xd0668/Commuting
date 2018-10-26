@@ -42,7 +42,7 @@ object Main: TMain
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 691
+    Left = 723
     Top = 43
     Width = 32
     Height = 25
@@ -55,7 +55,7 @@ object Main: TMain
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 819
+    Left = 851
     Top = 43
     Width = 32
     Height = 25
@@ -81,7 +81,7 @@ object Main: TMain
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 625
+    Left = 657
     Top = 43
     Width = 60
     Height = 25
@@ -94,7 +94,7 @@ object Main: TMain
     ParentFont = False
   end
   object Label7: TLabel
-    Left = 753
+    Left = 785
     Top = 43
     Width = 60
     Height = 25
@@ -107,19 +107,19 @@ object Main: TMain
     ParentFont = False
   end
   object Button1: TButton
-    Left = 1152
-    Top = 32
-    Width = 75
-    Height = 25
+    Left = 1080
+    Top = 24
+    Width = 97
+    Height = 42
     Caption = #44060#51064#51221#48372#49688#51221
     TabOrder = 0
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 1264
-    Top = 32
-    Width = 75
-    Height = 25
+    Left = 1192
+    Top = 24
+    Width = 97
+    Height = 42
     Caption = #54924#50896#53448#53748
     TabOrder = 1
   end
