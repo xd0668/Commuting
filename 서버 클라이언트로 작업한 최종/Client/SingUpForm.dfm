@@ -220,7 +220,7 @@ object SingUp: TSingUp
     Top = 178
     Width = 170
     Height = 26
-    DataField = 'PassWord'
+    DataField = 'PW'
     DataSource = ClientModule1.DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText

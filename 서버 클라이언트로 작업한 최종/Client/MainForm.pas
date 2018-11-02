@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Grids,
-  Vcl.Samples.Calendar, Vcl.WinXCalendars, Vcl.ComCtrls;
+  Vcl.Samples.Calendar, Vcl.WinXCalendars, Vcl.ComCtrls, Planner, Vcl.ExtCtrls,
+  PlannerMonthView, DBPlannerMonthView;
 
 type
   TMain = class(TForm)
@@ -18,9 +19,14 @@ type
     Label7: TLabel;
     Button1: TButton;
     Button2: TButton;
+    DBPlannerMonthView1: TDBPlannerMonthView;
     procedure CreateParams(var Params: TCreateParams); override;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button1Click(Sender: TObject);
+    procedure DBPlannerMonthView1MonthChanged(Sender: TObject; origDate,
+      newDate: TDateTime);
+    procedure DBPlannerMonthView1YearChanged(Sender: TObject; origDate,
+      newDate: TDateTime);
 
   private
     { Private declarations }
@@ -30,6 +36,8 @@ type
 
 var
   Main: TMain;
+  CalenderDate : String;
+  LoginID : String;
 
 implementation
 
@@ -58,14 +66,82 @@ a :=  LoginForm.Edit1.Text;
 end;
 
 // 작업표시줄 아이콘 생성
-
-
-
 procedure TMain.CreateParams(var Params: TCreateParams);
 begin
   inherited CreateParams(Params);
   Params.ExStyle := WS_EX_APPWINDOW;
   Params.WndParent := GetDesktopWindow;
+end;
+
+// 월별 조회
+procedure TMain.DBPlannerMonthView1MonthChanged(Sender: TObject; origDate,
+  newDate: TDateTime);
+begin
+ // DBPlannerMonthView1.Date := Date;
+  CalenderDate := FormatDateTime('yyyy-mm',Main.DBPlannerMonthView1.Date);
+  LoginID := LoginForm.Edit1.Text;
+
+  with ClientModule1 do
+
+  begin
+
+    SQLQuery1.sql.Clear;
+    SQLQuery1.sql.Add('select ID,TEST,WORKTYPE,ONTIME from WORK22');
+    SQLQuery1.sql.Add('where TEST = ''' + CalenderDate + ''' and ID = ''' + LoginID +'''' );
+    SQLQuery1.Open;
+    SQLQuery1.First;
+
+    while(not SQLQuery1.EOF)do begin
+     // ShowMessage( SQLQuery1['ONTIME']);
+
+      with DBPlannerMonthView1.CreateItem do
+      begin
+        ItemStartTime := SQLQuery1.FieldByName('ONTIME').AsDateTime;
+        ItemEndTime := SQLQuery1.FieldByName('ONTIME').AsDateTime;
+        Text.Text := SQLQuery1.FieldByName('WORKTYPE').AsString;
+        text.;
+        Update;
+      end;
+
+      SQLQuery1.Next;
+
+    end;
+  end;
+
+end;
+
+procedure TMain.DBPlannerMonthView1YearChanged(Sender: TObject; origDate,
+  newDate: TDateTime);
+begin
+  //DBPlannerMonthView1.Date := Date;
+  CalenderDate := FormatDateTime('yyyy-mm',Main.DBPlannerMonthView1.Date);
+  LoginID := LoginForm.Edit1.Text;
+
+  with ClientModule1 do
+
+  begin
+
+    SQLQuery1.sql.Clear;
+    SQLQuery1.sql.Add('select * from WORK22');
+    SQLQuery1.sql.Add('where TEST = ''' + CalenderDate + ''' and ID = ''' + LoginID +'''');
+    SQLQuery1.Open;
+    SQLQuery1.First;
+
+    while(not SQLQuery1.EOF)do begin
+     // ShowMessage( SQLQuery1['ONTIME']);
+
+      with DBPlannerMonthView1.CreateItem do
+      begin
+        ItemStartTime := SQLQuery1.FieldByName('ONTIME').AsDateTime;
+        ItemEndTime := SQLQuery1.FieldByName('ONTIME').AsDateTime;
+        Text.Text := SQLQuery1.FieldByName('ONTIME').AsString;
+        Update;
+      end;
+
+      SQLQuery1.Next;
+
+    end;
+  end;
 end;
 
 // 메인화면 종료시 메모리 제거

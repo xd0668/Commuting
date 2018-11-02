@@ -16,7 +16,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  TStyleManager.TrySetStyle('Turquoise Gray');
+  TStyleManager.TrySetStyle('TabletDark');
   Application.CreateForm(TLoginForm, LoginForm);
   Application.CreateForm(TClientModule1, ClientModule1);
   Application.CreateForm(TMain, Main);

@@ -1,7 +1,7 @@
 object ClientModule1: TClientModule1
   OldCreateOrder = False
-  Height = 264
-  Width = 509
+  Height = 351
+  Width = 484
   object SQLConnection1: TSQLConnection
     DriverName = 'DataSnap'
     LoginPrompt = False
@@ -117,5 +117,78 @@ object ClientModule1: TClientModule1
     Connected = True
     Left = 32
     Top = 168
+  end
+  object SQLConnection3: TSQLConnection
+    ConnectionName = 'Work'
+    DriverName = 'Interbase'
+    LoginPrompt = False
+    Params.Strings = (
+      'GetDriverFunc=getSQLDriverINTERBASE'
+      'DriverName=Interbase'
+      'DriverUnit=Data.DBXInterBase'
+      
+        'DriverPackageLoader=TDBXDynalinkDriverLoader,DbxCommonDriver250.' +
+        'bpl'
+      
+        'DriverAssemblyLoader=Borland.Data.TDBXDynalinkDriverLoader,Borla' +
+        'nd.Data.DbxCommonDriver,Version=24.0.0.0,Culture=neutral,PublicK' +
+        'eyToken=91d62ebb5b0d1b1b'
+      
+        'MetaDataPackageLoader=TDBXInterbaseMetaDataCommandFactory,DbxInt' +
+        'erBaseDriver250.bpl'
+      
+        'MetaDataAssemblyLoader=Borland.Data.TDBXInterbaseMetaDataCommand' +
+        'Factory,Borland.Data.DbxInterBaseDriver,Version=24.0.0.0,Culture' +
+        '=neutral,PublicKeyToken=91d62ebb5b0d1b1b'
+      'LibraryName=dbxint.dll'
+      'LibraryNameOsx=libsqlib.dylib'
+      'VendorLib=GDS32.DLL'
+      'VendorLibWin64=ibclient64.dll'
+      'VendorLibOsx=libgds.dylib'
+      'Database=C:\Databases\Work.IB'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'Role=RoleName'
+      'MaxBlobSize=-1'
+      'LocaleCode=0000'
+      'IsolationLevel=ReadCommitted'
+      'SQLDialect=3'
+      'CommitRetain=False'
+      'WaitOnLocks=True'
+      'TrimChar=False'
+      'DisplayDriverName=InterBase Server'
+      'BlobSize=-1'
+      'ErrorResourceFile='
+      'RoleName=RoleName'
+      'ServerCharSet='
+      'Trim Char=False'
+      'SEP=')
+    Connected = True
+    Left = 24
+    Top = 247
+  end
+  object SQLQuery1: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = SQLConnection3
+    Left = 128
+    Top = 247
+  end
+  object DataSource3: TDataSource
+    DataSet = ClientDataSet2
+    Left = 421
+    Top = 247
+  end
+  object ClientDataSet2: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DataSetProvider1'
+    Left = 344
+    Top = 247
+  end
+  object DataSetProvider2: TDataSetProvider
+    DataSet = SQLQuery1
+    Left = 240
+    Top = 247
   end
 end

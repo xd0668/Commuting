@@ -18,6 +18,11 @@ type
     ClientDataSet1: TClientDataSet;
     DataSource2: TDataSource;
     SQLConnection2: TSQLConnection;
+    SQLConnection3: TSQLConnection;
+    SQLQuery1: TSQLQuery;
+    DataSource3: TDataSource;
+    ClientDataSet2: TClientDataSet;
+    DataSetProvider2: TDataSetProvider;
   private
     FInstanceOwner: Boolean;
     FServerMethods1Client: TServerMethods1Client;

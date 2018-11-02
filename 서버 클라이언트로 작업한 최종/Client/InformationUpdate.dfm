@@ -219,7 +219,7 @@ object InforUpdate: TInforUpdate
     Top = 176
     Width = 170
     Height = 26
-    DataField = 'PassWord'
+    DataField = 'PW'
     DataSource = ClientModule1.DataSource2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText

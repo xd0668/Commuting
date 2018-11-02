@@ -37,6 +37,8 @@ var
   LoginForm: TLoginForm;
   today : TDateTime;
   s : string;
+  CalenderDate : String;
+  LoginID : String;
 
 implementation
 
@@ -66,8 +68,8 @@ begin
 
   with ClientModule1 do
   begin
-    // InterBase PERSONNEL Table 연결 부분
 
+    // InterBase PERSONNEL Table 연결 부분
       PERSONNEL_SQLQuery.sql.Clear;
       PERSONNEL_SQLQuery.sql.Add('Select * from PERSONNEl');
       PERSONNEL_SQLQuery.sql.Add('Where ID = :id');
@@ -83,7 +85,7 @@ begin
     end;
 
     // InterBase PERSONNEL PassWord 비교
-    if PERSONNEL_SQLQuery.FieldByName('PassWord').AsString <> Edit2.Text then
+    if PERSONNEL_SQLQuery.FieldByName('PW').AsString <> Edit2.Text then
     begin
       MessageBox(Handle, '비밀번호가 틀렸습니다.', '오류', MB_ICONERROR or MB_OK);
       Edit2.SetFocus;
@@ -96,12 +98,43 @@ begin
       LoginForm.Hide;
     end;
 
+      // 로그인 성공시 메인화면 출력
+      Main.Show;
+      Main.Label2.Caption := ClientModule1.PERSONNEL_SQLQuery.FieldByName('Department').AsString; //  메인 화면으로 부서명 출력
+      Main.Label3.Caption := ClientModule1.PERSONNEL_SQLQuery.FieldByName('Class').AsString;  //
+      Main.Label4.Caption := ClientModule1.PERSONNEL_SQLQuery.FieldByName('NAME').AsString;
+
   end;
-  // 로그인 성공시 메인화면 출력
-  Main.Show;
-  Main.Label2.Caption := ClientModule1.PERSONNEL_SQLQuery.FieldByName('Department').AsString; //  메인 화면으로 부서명 출력
-  Main.Label3.Caption := ClientModule1.PERSONNEL_SQLQuery.FieldByName('Class').AsString;  //
-  Main.Label4.Caption := ClientModule1.PERSONNEL_SQLQuery.FieldByName('NAME').AsString;
+
+    // 로그인 버튼 클릭시 달락에 그 아이디에 대한 일정 표시
+    Main.DBPlannerMonthView1.Date;
+    CalenderDate := FormatDateTime('yyyy-mm',Main.DBPlannerMonthView1.Date);
+    LoginID := LoginForm.Edit1.Text;
+
+
+      with ClientModule1 do
+      begin
+        SQLQuery1.sql.Clear;
+        SQLQuery1.sql.Add('select ID,TEST,WORKTYPE,ONTIME from WORK22');
+        SQLQuery1.sql.Add('where TEST = ''' + CalenderDate + ''' and ID = ''' + LoginID +'''' );
+        SQLQuery1.Open;
+        SQLQuery1.First;
+
+        while(not SQLQuery1.EOF)do begin
+
+          with Main.DBPlannerMonthView1.CreateItem do
+          begin
+            ItemStartTime := SQLQuery1.FieldByName('ONTIME').AsDateTime;
+            ItemEndTime := SQLQuery1.FieldByName('ONTIME').AsDateTime;
+            Text.Text := SQLQuery1.FieldByName('WORKTYPE').AsString;
+            Update;
+          end;
+
+        SQLQuery1.Next;
+
+        end;
+      end;
+
 
 end;
 
